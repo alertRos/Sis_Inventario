@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using SisInventario.Dto.Email;
+using SisInventario.Interface;
 using SisInventario.Models;
 
 namespace SisInventario.Controllers
@@ -12,10 +14,12 @@ namespace SisInventario.Controllers
     public class UsuariosController : Controller
     {
         private readonly InventarioContext _context;
+        private readonly IEmailService _emailService;
 
-        public UsuariosController(InventarioContext context)
+        public UsuariosController(InventarioContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
         }
 
         // GET: Usuarios
@@ -66,6 +70,36 @@ namespace SisInventario.Controllers
             return View(usuario);
         }
 
+
+        public IActionResult ChangePassword ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(string email)
+        {
+            if (email == null || _context.Usuarios == null)
+            {
+                return NotFound();
+            }
+
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(m => m.Email == email);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            EmailRequest emailRequest = new()
+            {
+                To = usuario.Email,
+                Subject = "Recuperación de contraseña",
+                Body = "Hacer clic aqui, para cambiar contraseña:  " + Edit(usuario.Id)
+            };
+            await _emailService.SendEmailAsync(emailRequest);
+            return RedirectToAction(nameof(Index));
+        }
         // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {

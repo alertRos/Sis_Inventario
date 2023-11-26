@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using SisInventario.Interface;
 using SisInventario.Models;
+using SisInventario.Services;
+using SisInventario.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<InventarioContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
+builder.Services.AddTransient<IEmailService, EmailService>();
 
 var app = builder.Build();
 
