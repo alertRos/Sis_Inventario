@@ -1,5 +1,4 @@
 ﻿@model IEnumerable<SisInventario.Models.Producto>
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,6 +7,39 @@
 
 <p>
     <a asp-action="Create">Create New</a>
+    <div class="mb-3">
+
+        <form method="get" asp-controller="Productos" asp-action="GetByFecha">
+            <div class="mb-3">
+                <input type="text" name="year" class="form-control form-control-lg"
+                       placeholder="Ingresar el año" />
+            </div>
+            <input type="submit" value="Buscar" class="btn btn-primary" />
+        </form>
+    </div>
+<div class="mb-3">
+
+        <form method="get" asp-controller="Productos" asp-action="GetByCategoria">
+            <div class="mb-3">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="Id" class="form-control" asp-items="ViewBag.IdCategoria as SelectList">
+                </select>
+            </div>
+            <input type="submit" value="Buscar" class="btn btn-primary" />
+        </form>
+</div>
+    <div class="mb-3">
+  
+        <form method="get" asp-controller="Productos" asp-action="GetByMarca">
+            <div class="mb-3">
+                <label for="marca">Marca:</label>
+                <select id="marca" name="Id" class="form-control" asp-items="ViewBag.IdMarca as SelectList">
+                </select>
+            </div>
+            <input type="submit" value="Buscar" class="btn btn-primary" />
+        </form>
+    </div>
+
 </p>
 <table class="table">
     <thead>

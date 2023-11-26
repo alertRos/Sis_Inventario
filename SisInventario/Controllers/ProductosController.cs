@@ -21,10 +21,39 @@ namespace SisInventario.Controllers
         // GET: Productoes
         public async Task<IActionResult> Index()
         {
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Categoria");
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Marca");
             var inventarioContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation).Include(p => p.IdProveedorNavigation);
+
             return View(await inventarioContext.ToListAsync());
         }
 
+        public async Task<IActionResult> GetByFecha (string year)
+        {
+            var inventarioContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation).Include(p => p.IdProveedorNavigation);
+            var productosByFecha = await inventarioContext.Where(p => p.FechaCaducidad.Value.Year.ToString() == year).ToListAsync();
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Categoria");
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Marca");
+            return View("Index", productosByFecha);
+        }
+        public async Task<IActionResult> GetByCategoria(int Id)
+        {
+            var inventarioContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation).Include(p => p.IdProveedorNavigation);
+            var productosByCategoria = await inventarioContext.Where(p => p.IdCategoriaNavigation.Id == Id).ToListAsync();
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Categoria");
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Marca");
+
+
+            return View("Index", productosByCategoria);
+        }
+        public async Task<IActionResult> GetByMarca(int Id)
+        {
+            var inventarioContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation).Include(p => p.IdProveedorNavigation);
+            ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Marca");
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Categoria");
+
+            return View("Index",await inventarioContext.Where(p => p.IdMarcaNavigation.Id == Id).ToListAsync());
+        }
         // GET: Productoes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
