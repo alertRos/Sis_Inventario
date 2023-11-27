@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SisInventario.Models;
 
@@ -11,9 +12,11 @@ using SisInventario.Models;
 namespace SisInventario.Migrations
 {
     [DbContext(typeof(InventarioContext))]
-    partial class InventarioContextModelSnapshot : ModelSnapshot
+    [Migration("20231127002536_UpdateModels")]
+    partial class UpdateModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -314,6 +317,9 @@ namespace SisInventario.Migrations
                         .HasColumnType("varchar(255)")
                         .HasColumnName("email");
 
+                    b.Property<int>("FK_ROLEID")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdNegocio")
                         .HasColumnType("int");
 
@@ -329,15 +335,17 @@ namespace SisInventario.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("password");
 
                     b.HasKey("Id")
                         .HasName("PK__Usuario__3213E83FC82D7D5E");
 
-                    b.HasIndex("IdNegocio");
+                    b.HasIndex("FK_ROLEID");
 
-                    b.HasIndex("IdRole");
+                    b.HasIndex("IdNegocio");
 
                     b.ToTable("Usuario", (string)null);
                 });
@@ -398,17 +406,17 @@ namespace SisInventario.Migrations
 
             modelBuilder.Entity("SisInventario.Models.Usuario", b =>
                 {
+                    b.HasOne("SisInventario.Models.Role", "role")
+                        .WithMany("usuarios")
+                        .HasForeignKey("FK_ROLEID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.HasOne("SisInventario.Models.Negocios", "Negocios")
                         .WithMany("Usuarios")
                         .HasForeignKey("IdNegocio")
                         .IsRequired()
                         .HasConstraintName("FK_Negocio_Usuario");
-
-                    b.HasOne("SisInventario.Models.Role", "role")
-                        .WithMany("usuarios")
-                        .HasForeignKey("IdRole")
-                        .IsRequired()
-                        .HasConstraintName("FK_Role_Usuario");
 
                     b.Navigation("Negocios");
 

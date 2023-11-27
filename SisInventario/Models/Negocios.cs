@@ -15,9 +15,9 @@ public partial class Negocios
 
     public string Email { get; set; } = null!;
 
-    public int IdRepresentante { get; set; }
+    public ICollection<Producto> Productos { get; set; } = new List<Producto>();
 
+    public ICollection<Usuario> Usuarios { get; set; } = new List<Usuario>();
     public virtual ICollection<Cliente> Clientes { get; set; } = new List<Cliente>();
 
-    public virtual Cliente IdRepresentanteNavigation { get; set; } = null!;
 }

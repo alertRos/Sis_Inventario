@@ -21,7 +21,7 @@ namespace SisInventario.Controllers
         // GET: Negocios
         public async Task<IActionResult> Index()
         {
-            var inventarioContext = _context.Negocios.Include(n => n.IdRepresentanteNavigation);
+            var inventarioContext = _context.Negocios.Include(n => n.Productos).Include(n => n.Usuarios).Include(n => n.Clientes);
             return View(await inventarioContext.ToListAsync());
         }
 
@@ -33,9 +33,7 @@ namespace SisInventario.Controllers
                 return NotFound();
             }
 
-            var negocios = await _context.Negocios
-                .Include(n => n.IdRepresentanteNavigation)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var negocios = _context.Negocios.FirstOrDefaultAsync(m => m.Id == id);
             if (negocios == null)
             {
                 return NotFound();
@@ -56,7 +54,7 @@ namespace SisInventario.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Negocio,Telefono,Direccion,Email,IdRepresentante")] Negocios negocios)
+        public async Task<IActionResult> Create([Bind("Id,Negocio,Telefono,Direccion,Email")] Negocios negocios)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +62,7 @@ namespace SisInventario.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdRepresentante"] = new SelectList(_context.Clientes, "Id", "Id", negocios.IdRepresentante);
+
             return View(negocios);
         }
 
@@ -81,7 +79,7 @@ namespace SisInventario.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdRepresentante"] = new SelectList(_context.Clientes, "Id", "Id", negocios.IdRepresentante);
+
             return View(negocios);
         }
 
@@ -90,7 +88,7 @@ namespace SisInventario.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Negocio,Telefono,Direccion,Email,IdRepresentante")] Negocios negocios)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Negocio,Telefono,Direccion,Email")] Negocios negocios)
         {
             if (id != negocios.Id)
             {
@@ -117,7 +115,7 @@ namespace SisInventario.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdRepresentante"] = new SelectList(_context.Clientes, "Id", "Id", negocios.IdRepresentante);
+
             return View(negocios);
         }
 
@@ -130,7 +128,6 @@ namespace SisInventario.Controllers
             }
 
             var negocios = await _context.Negocios
-                .Include(n => n.IdRepresentanteNavigation)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (negocios == null)
             {

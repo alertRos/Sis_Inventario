@@ -5,12 +5,24 @@
       "PackagePath": "staticwebassets\\SisInventario.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\wwwroot\\css\\ChangePassword.css",
+      "PackagePath": "staticwebassets\\css\\ChangePassword.css"
+    },
+    {
       "Id": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\wwwroot\\img\\Sign up-rafiki.png",
+      "PackagePath": "staticwebassets\\img\\Sign up-rafiki.png"
+    },
+    {
+      "Id": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\wwwroot\\img\\Spreadsheets-pana.png",
+      "PackagePath": "staticwebassets\\img\\Spreadsheets-pana.png"
     },
     {
       "Id": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\wwwroot\\js\\site.js",

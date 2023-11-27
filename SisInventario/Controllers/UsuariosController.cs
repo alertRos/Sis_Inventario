@@ -50,7 +50,7 @@ namespace SisInventario.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Remove("user");
-            return RedirectToRoute(new { controller = "User", action = "Index" });
+            return RedirectToRoute(new { controller = "Usuarios", action = "Login" });
         }
 
         // GET: Usuarios
@@ -80,25 +80,22 @@ namespace SisInventario.Controllers
         }
 
         // GET: Usuarios/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
 
         // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Usuario1,Password,Email")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Nombre,Password,Email, IdRole, IdNegocio")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Add(usuario);
+                usuario.Password = PasswordEncryption.EncryptionPass(usuario.Password);
+                await _context.AddAsync(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(usuario);
+            return View("Login",usuario);
         }
 
 
@@ -122,11 +119,12 @@ namespace SisInventario.Controllers
             {
                 return NotFound();
             }
+            string enlace = "https://localhost:7268/Usuarios/Edit/" + usuario.Id;
             EmailRequest emailRequest = new()
             {
                 To = usuario.Email,
                 Subject = "Recuperación de contraseña",
-                Body = "Hacer clic aqui, para cambiar contraseña:  " + Edit(usuario.Id)
+                Body = "Hacer clic aqui, para cambiar contraseña:  " + ' ' + $"<a href=\"{enlace}\">Enlace</a>"
             };
             await _emailService.SendEmailAsync(emailRequest);
             return RedirectToAction(nameof(Index));
@@ -140,6 +138,7 @@ namespace SisInventario.Controllers
             }
 
             var usuario = await _context.Usuarios.FindAsync(id);
+
             if (usuario == null)
             {
                 return NotFound();
@@ -152,7 +151,7 @@ namespace SisInventario.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Usuario1,Password,Email")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Email, IdRole, IdNegocio")] Usuario usuario)
         {
             if (id != usuario.Id)
             {
@@ -163,7 +162,8 @@ namespace SisInventario.Controllers
             {
                 try
                 {
-                    _context.Update(usuario);
+                    usuario.Password = PasswordEncryption.EncryptionPass(usuario.Password);
+                    _context.Entry(usuario).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
