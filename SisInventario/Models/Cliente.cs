@@ -22,6 +22,4 @@ public partial class Cliente
     public virtual Negocios IdNegocioNavigation { get; set; } = null!;
 
     public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
-
-    public virtual ICollection<Negocios> Negocio { get; set; } = new List<Negocios>();
 }

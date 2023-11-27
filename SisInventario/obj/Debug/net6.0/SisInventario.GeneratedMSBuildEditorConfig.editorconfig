@@ -9,177 +9,185 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SisInventario
 build_property.RootNamespace = SisInventario
-build_property.ProjectDir = C:\Users\rabri\source\repos\SisInventario\SisInventario\
+build_property.ProjectDir = C:\Users\addie\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Desktop\Itla\Cuatrimestre 7\Sis_Inventario\SisInventario\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rabri\source\repos\SisInventario\SisInventario
+build_property.MSBuildProjectDirectory = C:\Users\addie\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\Desktop\Itla\Cuatrimestre 7\Sis_Inventario\SisInventario
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Categorias/Create.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Categorias/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Categorias/Delete.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Categorias/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Categorias/Details.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Categorias/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Categorias/Edit.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Categorias/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Categorias/Index.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Categorias/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Clientes/Create.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Clientes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Clientes/Delete.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Clientes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Clientes/Details.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Clientes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Clientes/Edit.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Clientes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Clientes/Index.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Clientes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Home/Index.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Home/Privacy.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Marcas/Create.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Marcas/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Marcas/Delete.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Marcas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Marcas/Details.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Marcas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Marcas/Edit.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Marcas/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Marcas/Index.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Marcas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Negocios/Create.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Negocios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVnb2Npb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Negocios/Delete.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Negocios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVnb2Npb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Negocios/Details.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Negocios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVnb2Npb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Negocios/Edit.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Negocios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVnb2Npb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Negocios/Index.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Negocios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVnb2Npb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Productoes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xDcmVhdGUuY3NodG1s
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Productos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Productoes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xEZWxldGUuY3NodG1s
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Productos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Productoes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xEZXRhaWxzLmNzaHRtbA==
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Productos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Productoes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xFZGl0LmNzaHRtbA==
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Productos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Productoes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xJbmRleC5jc2h0bWw=
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Productos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Proveedores/Create.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Proveedores/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Proveedores/Delete.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Proveedores/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Proveedores/Details.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Proveedores/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Proveedores/Edit.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Proveedores/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Proveedores/Index.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Proveedores/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Shared/Error.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Usuarios/Create.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Usuarios/ChangePassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Usuarios/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Usuarios/Delete.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Usuarios/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Usuarios/Details.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Usuarios/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Usuarios/Edit.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Usuarios/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Usuarios/Index.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Usuarios/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/_ViewImports.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Usuarios/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/_ViewStart.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/SisInventario/SisInventario/Views/Shared/_Layout.cshtml]
+[C:/Users/addie/OneDrive - Instituto Tecnológico de Las Américas (ITLA)/Desktop/Itla/Cuatrimestre 7/Sis_Inventario/SisInventario/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-bbbwpkch40

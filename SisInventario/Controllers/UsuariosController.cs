@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using SisInventario.Dto.Email;
+using SisInventario.Helper;
+using SisInventario.Interface;
 using SisInventario.Models;
 
 namespace SisInventario.Controllers
@@ -12,10 +15,42 @@ namespace SisInventario.Controllers
     public class UsuariosController : Controller
     {
         private readonly InventarioContext _context;
+        private readonly IEmailService _emailService;
 
-        public UsuariosController(InventarioContext context)
+        public UsuariosController(InventarioContext context, IEmailService emailService)
         {
             _context = context;
+            _emailService = emailService;
+        }
+
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(string email, string password)
+        {
+            if (email == null || password == null || _context.Usuarios == null)
+            {
+                return NotFound();
+            }
+
+            string constraseña = PasswordEncryption.EncryptionPass(password);
+            Usuario usuario = await _context.Set<Usuario>().FirstOrDefaultAsync(u => u.Email == email && u.Password == constraseña);
+            if (usuario != null)
+            {
+                HttpContext.Session.Set<Usuario>("user", usuario);
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("user");
+            return RedirectToRoute(new { controller = "Usuarios", action = "Login" });
         }
 
         // GET: Usuarios
@@ -45,27 +80,55 @@ namespace SisInventario.Controllers
         }
 
         // GET: Usuarios/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
 
         // POST: Usuarios/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Usuario1,Password,Email")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Nombre,Password,Email, IdRole, IdNegocio")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Add(usuario);
+                usuario.Password = PasswordEncryption.EncryptionPass(usuario.Password);
+                await _context.AddAsync(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(usuario);
+            return View("Login",usuario);
         }
 
+
+        public IActionResult ChangePassword ()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(string email)
+        {
+            if (email == null || _context.Usuarios == null)
+            {
+                return NotFound();
+            }
+
+            var usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(m => m.Email == email);
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            string enlace = "https://localhost:7268/Usuarios/Edit/" + usuario.Id;
+            EmailRequest emailRequest = new()
+            {
+                To = usuario.Email,
+                Subject = "Recuperación de contraseña",
+                Body = "Hacer clic aqui, para cambiar contraseña:  " + ' ' + $"<a href=\"{enlace}\">Enlace</a>"
+            };
+            await _emailService.SendEmailAsync(emailRequest);
+            return RedirectToAction(nameof(Index));
+        }
         // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -75,6 +138,7 @@ namespace SisInventario.Controllers
             }
 
             var usuario = await _context.Usuarios.FindAsync(id);
+
             if (usuario == null)
             {
                 return NotFound();
@@ -87,7 +151,7 @@ namespace SisInventario.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Usuario1,Password,Email")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Email, IdRole, IdNegocio")] Usuario usuario)
         {
             if (id != usuario.Id)
             {
@@ -98,7 +162,8 @@ namespace SisInventario.Controllers
             {
                 try
                 {
-                    _context.Update(usuario);
+                    usuario.Password = PasswordEncryption.EncryptionPass(usuario.Password);
+                    _context.Entry(usuario).State = EntityState.Modified;
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)

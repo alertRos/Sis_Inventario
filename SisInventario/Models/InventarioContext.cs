@@ -29,6 +29,7 @@ public partial class InventarioContext : DbContext
     public virtual DbSet<Proveedores> Proveedors { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual DbSet<Role> Roles { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
         ////#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -37,6 +38,15 @@ public partial class InventarioContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<Role>(entity =>
+        {
+            entity.HasKey(e=>e.Id).HasName("PK__Role__3213E83F9A1B0D5F");
+            entity.Property(e => e.RoleName)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("roleName");
+        });
         modelBuilder.Entity<Categorias>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Categori__3213E83F23713857");
@@ -120,7 +130,6 @@ public partial class InventarioContext : DbContext
                 .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("email");
-            entity.Property(e => e.IdRepresentante).HasColumnName("idRepresentante");
             entity.Property(e => e.Negocio)
                 .HasMaxLength(100)
                 .IsUnicode(false)
@@ -130,10 +139,6 @@ public partial class InventarioContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("telefono");
 
-            entity.HasOne(d => d.IdRepresentanteNavigation).WithMany(p => p.Negocio)
-                .HasForeignKey(d => d.IdRepresentante)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Negocio_Cliente");
         });
 
         modelBuilder.Entity<Producto>(entity =>
@@ -176,6 +181,12 @@ public partial class InventarioContext : DbContext
                 .HasForeignKey(d => d.IdProveedor)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Productos_Proveedor");
+
+
+            entity.HasOne(d => d.Negocios).WithMany(p => p.Productos)
+                .HasForeignKey(d => d.IdNegocio)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Productos_Negocio");
         });
 
         modelBuilder.Entity<Proveedores>(entity =>
@@ -214,13 +225,20 @@ public partial class InventarioContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("email");
             entity.Property(e => e.Password)
-                .HasMaxLength(50)
-                .IsUnicode(false)
                 .HasColumnName("password");
-            entity.Property(e => e.Usuario1)
+            entity.Property(e => e.Nombre)
                 .HasMaxLength(20)
                 .IsUnicode(false)
-                .HasColumnName("usuario");
+                .HasColumnName("Nombre");
+            entity.HasOne(d => d.role).WithMany(p => p.usuarios)
+             .HasForeignKey(d => d.IdRole)
+             .OnDelete(DeleteBehavior.ClientSetNull)
+                             .HasConstraintName("FK_Role_Usuario"); ;
+
+            entity.HasOne(d => d.Negocios).WithMany(p => p.Usuarios)
+                .HasForeignKey(d => d.IdNegocio)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Negocio_Usuario");
         });
 
         OnModelCreatingPartial(modelBuilder);

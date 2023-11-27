@@ -24,6 +24,8 @@ public partial class Producto
     public int Stock { get; set; }
 
     public int IdProveedor { get; set; }
+    public int IdNegocio { get; set; }
+    public Negocios Negocios { get; set; } 
 
     public virtual Categorias IdCategoriaNavigation { get; set; } = null!;
 
