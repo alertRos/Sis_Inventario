@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SisInventario.Interface;
+using SisInventario.Middlewares;
 using SisInventario.Models;
 using SisInventario.Services;
 using SisInventario.Settings;
@@ -8,12 +9,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSession();
 builder.Services.AddDbContext<InventarioContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddTransient<IEmailService, EmailService>();
-
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddTransient<ValidateSession, ValidateSession>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -26,7 +28,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseSession();
 app.UseRouting();
 
 app.UseAuthorization();

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SisInventario.Dto.Email;
+using SisInventario.Helper;
 using SisInventario.Interface;
 using SisInventario.Models;
 
@@ -20,6 +21,36 @@ namespace SisInventario.Controllers
         {
             _context = context;
             _emailService = emailService;
+        }
+
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(string email, string password)
+        {
+            if (email == null || password == null || _context.Usuarios == null)
+            {
+                return NotFound();
+            }
+
+            string constraseña = PasswordEncryption.EncryptionPass(password);
+            Usuario usuario = await _context.Set<Usuario>().FirstOrDefaultAsync(u => u.Email == email && u.Password == constraseña);
+            if (usuario != null)
+            {
+                HttpContext.Session.Set<Usuario>("user", usuario);
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("user");
+            return RedirectToRoute(new { controller = "User", action = "Index" });
         }
 
         // GET: Usuarios
