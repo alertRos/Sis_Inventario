@@ -11572,23 +11572,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\addie\\.nuget\\packages\\": {},
+    "C:\\Users\\darli\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\SisInventario.csproj",
+      "projectUniqueName": "E:\\Source\\repo2\\SisInventario\\SisInventario.csproj",
       "projectName": "SisInventario",
-      "projectPath": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\SisInventario.csproj",
-      "packagesPath": "C:\\Users\\addie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\addie\\OneDrive - Instituto Tecnológico de Las Américas (ITLA)\\Desktop\\Itla\\Cuatrimestre 7\\Sis_Inventario\\SisInventario\\obj\\",
+      "projectPath": "E:\\Source\\repo2\\SisInventario\\SisInventario.csproj",
+      "packagesPath": "C:\\Users\\darli\\.nuget\\packages\\",
+      "outputPath": "E:\\Source\\repo2\\SisInventario\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\addie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\darli\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -11597,7 +11597,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11666,7 +11665,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
