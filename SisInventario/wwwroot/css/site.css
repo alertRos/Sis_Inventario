@@ -1,9 +1,9 @@
-/* Importamos la Url del tipo de letra "Fredoka" */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
 /* Modificacion del cuerpo del Html */
 * {
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
@@ -75,6 +75,25 @@ a {
     }
 
 
+.registe {
+    font-family: 'Fredoka', sans-serif;
+    border-radius: 14px;
+    border: 1px solid #005954;
+    background-color: #005954;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    width: 80%;
+    height: 52px;
+    text-align: center;
+}
+    .registe:hover {
+        color: #FFFFFF;
+    }
 button {
     font-family: 'Fredoka', sans-serif;
     border-radius: 14px;
@@ -98,11 +117,21 @@ button {
     button.res {
         margin-top: 18px;
     }
-
     button.inc {
         width: 50%;
     }
+    .registe:active {
+        transform: scale(0.95);
+    }
 
+    .registe.res {
+        margin-top: 18px;
+    }
+
+  
+.registe.inc {
+    width: 50%;
+}
 
 /* Modificaciones del formulario de registro */
 form {
@@ -118,7 +147,7 @@ form {
 
 
 /* Modificaciones de los input */
-input {
+.validationServer {
     font-family: 'Fredoka', sans-serif;
     font-size: 15px;
     border-radius: 14px;
@@ -163,16 +192,10 @@ input {
 .sign-up-container {
     left: 0;
     width: 50%;
-    opacity: 0;
+    opacity: 10;
     z-index: 1;
 }
 
-.container.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-}
 
 @keyframes show {
     0%, 49.99% {
@@ -254,19 +277,19 @@ input {
 
 /* Modificaciones para las imagenes */
 img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
 }
 
 .image-container {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
-    background: linear-gradient(180deg, rgba(0, 89, 84, 0.80) 0%, rgba(0, 89, 84, 0.00) 100%);
+    background: linear-gradient(180deg, rgba(0, 89, 84, 0.80) 0%, rgba(0, 89, 84, 0.00) 70%);
     display: inline-block;
 }
 
     .image-container img {
-        max-width: 100%;
+        max-width: 80%;
         height: auto;
         display: block;
         margin: 0 auto;

@@ -4,40 +4,69 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>Usuario</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">w
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="container" id="container">
+    <div class="form-container sign-in-container needs-validation">
+
+        <form class="needs-validation" method="post" asp-controller="Usuarios" asp-action="Create">
+            <span>Crea una cuenta</span>
+            <div class="input-with-icon form-input">
+                <i class="fa-regular fa-user"></i>
+                <input asp-for="Nombre" type="text" placeholder="Nombre" class="validationServer form-control" id="nombre" aria-describedby="validationServer03Feedback" />
+                <div id="nombreFeedback" class="invalid-feedback">
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
+            <div class="input-with-icon">
+                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
+                <input asp-for="Password" type="password" class="validationServer form-control" id="password" placeholder="Contraseña" />
+                <div id="passwordFeedback" class="invalid-feedback">
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
-                <span asp-validation-for="Email" class="text-danger"></span>
+            <div class="input-with-icon">
+                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
+                <input asp-for="ConfirmPassword" id="confirm" type="password" class="validationServer form-control" placeholder="Contraseña"  />
+                <div id="confirmFeedback" class="invalid-feedback">
+                </div>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+            <div class="input-with-icon">
+                <i class="fa-regular fa-id-card"></i>
+                <input asp-for="Email" type="email" id="email" class="validationServer form-control" placeholder="Email" />
+                <div id="emailFeedback" class="invalid-feedback">
+                </div>
             </div>
-        </form>
+@*             <div class="input-with-icon">
+                <i class="fa-regular fa-id-card"></i>
+                <input asp-for="IdNegocio" type="number" class="validationServer form-control" placeholder="Negocio"  />
+            </div>
+            <div class="input-with-icon">
+                <i class="fa-regular fa-id-card"></i>
+                <input asp-for="IdRole" type="number" class="validationServer form-control" placeholder="Role"  />
+            </div> *@
+            <button type="submit" id="submitButton">Registrarme</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-right">
+                    <div class="image-container">
+
+                        <img src="~/img/Sign up-rafiki.png" alt="Imagen representativa del login">
+                    @if (!string.IsNullOrEmpty(ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                    {
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @Html.Raw(ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                    }
+                    
+                    </div>
+                    <a  asp-controller="Usuarios" asp-action="Login" class="inc registe" id="signIn">Iniciar Sesión</a>
+                </div>
+
+            </div>
+
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<script type="module" src="~/js/register.js"></script>
