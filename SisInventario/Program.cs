@@ -7,7 +7,7 @@ using SisInventario.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container. testing
+// Add services to the container. testings
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddDbContext<InventarioContext>(options =>
