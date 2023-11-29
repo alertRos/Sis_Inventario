@@ -4,10 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Asn1.Cmp;
 using SisInventario.Dto.Email;
 using SisInventario.Helper;
 using SisInventario.Interface;
+using SisInventario.Middlewares;
 using SisInventario.Models;
 
 namespace SisInventario.Controllers
@@ -16,39 +19,54 @@ namespace SisInventario.Controllers
     {
         private readonly InventarioContext _context;
         private readonly IEmailService _emailService;
+        private readonly ValidateSession _validateSession;
 
-        public UsuariosController(InventarioContext context, IEmailService emailService)
+        public UsuariosController(InventarioContext context, IEmailService emailService, ValidateSession validateSession)
         {
             _context = context;
             _emailService = emailService;
+            _validateSession = validateSession;
         }
 
-        public async Task<IActionResult> Login()
+        public IActionResult Login()
         {
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(string email, string password)
+        public async Task<IActionResult> Login(Usuario usuario)
         {
-            if (email == null || password == null || _context.Usuarios == null)
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            if (usuario == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            string constraseña = PasswordEncryption.EncryptionPass(password);
-            Usuario usuario = await _context.Set<Usuario>().FirstOrDefaultAsync(u => u.Email == email && u.Password == constraseña);
-            if (usuario != null)
+            string constraseña = PasswordEncryption.EncryptionPass(usuario.Password);
+            Usuario user = await _context.Set<Usuario>().FirstOrDefaultAsync(u => u.Email == usuario.Email && u.Password == constraseña);
+            if (user != null)
             {
                 HttpContext.Session.Set<Usuario>("user", usuario);
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-            return RedirectToAction(nameof(Index));
+                ModelState.AddModelError("Email", "Revise sus credenciales");
+                return View("Login", usuario);
         }
 
         public IActionResult Logout()
         {
+            if (!_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             HttpContext.Session.Remove("user");
             return RedirectToRoute(new { controller = "Usuarios", action = "Login" });
         }
@@ -56,7 +74,11 @@ namespace SisInventario.Controllers
         // GET: Usuarios
         public async Task<IActionResult> Index()
         {
-              return _context.Usuarios != null ? 
+            if (!_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            return _context.Usuarios != null ? 
                           View(await _context.Usuarios.ToListAsync()) :
                           Problem("Entity set 'InventarioContext.Usuarios'  is null.");
         }
@@ -64,6 +86,10 @@ namespace SisInventario.Controllers
         // GET: Usuarios/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            if (!_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
@@ -79,59 +105,99 @@ namespace SisInventario.Controllers
             return View(usuario);
         }
 
-        // GET: Usuarios/Create
 
-        // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nombre,Password,Email, IdRole, IdNegocio")] Usuario usuario)
+        public IActionResult Create()
         {
-            if (!ModelState.IsValid)
+            if (_validateSession.HasUser())
             {
-                usuario.Password = PasswordEncryption.EncryptionPass(usuario.Password);
-                await _context.AddAsync(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-            return View("Login",usuario);
-        }
-
-
-        public IActionResult ChangePassword ()
-        {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ChangePassword(string email)
+        public async Task<IActionResult> Create([Bind("Nombre,Password,Email, IdRole, IdNegocio")] Usuario usuario)
         {
-            if (email == null || _context.Usuarios == null)
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            if (!ModelState.IsValid) {
+                return View("Create", usuario);
+            }
+
+                usuario.IdRole = 1;
+                usuario.IdNegocio = 1;
+                usuario.Password = PasswordEncryption.EncryptionPass(usuario.Password);
+            usuario.ConfirmPassword = "";
+            var user = await _context.Usuarios.Where(u=>u.Email == usuario.Email).FirstOrDefaultAsync();
+            if (user != null)
+            {
+                ModelState.AddModelError("Email", "El correo electrónico ya está registrado.");
+                return View("Create", usuario);
+            }
+
+            await _context.AddAsync(usuario);
+                await _context.SaveChangesAsync();
+                EmailRequest emailRequest = new()
+                {
+                    To = usuario.Email,
+                    Subject = "Bienvenido " + usuario.Nombre + " a Sistema de Inventario",
+                    Body = "Bienvenido " + usuario.Nombre + " a Sistema de Inventario de su empresa"
+                };
+                await _emailService.SendEmailAsync(emailRequest);
+                return RedirectToAction(nameof(Login));
+
+        }
+
+
+        public IActionResult ChangePassword ()
+        {
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(Usuario usuario)
+        {
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            if (usuario == null || _context.Usuarios == null)
             {
                 return NotFound();
             }
 
-            var usuario = await _context.Usuarios
-                .FirstOrDefaultAsync(m => m.Email == email);
-            if (usuario == null)
+            var user = await _context.Usuarios
+                .FirstOrDefaultAsync(m => m.Email == usuario.Email);
+            if (user == null)
             {
-                return NotFound();
+                ModelState.AddModelError("Email", "El correo electrónico no se encontro.");
+                return View("ChangePassword", usuario);
             }
-            string enlace = "https://localhost:7268/Usuarios/Edit/" + usuario.Id;
+            string enlace = "https://localhost:7268/Usuarios/Edit/" + user.Id;
             EmailRequest emailRequest = new()
             {
-                To = usuario.Email,
+                To = user.Email,
                 Subject = "Recuperación de contraseña",
                 Body = "Hacer clic aqui, para cambiar contraseña:  " + ' ' + $"<a href=\"{enlace}\">Enlace</a>"
             };
             await _emailService.SendEmailAsync(emailRequest);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Login));
         }
         // GET: Usuarios/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
@@ -153,6 +219,10 @@ namespace SisInventario.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Email, IdRole, IdNegocio")] Usuario usuario)
         {
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             if (id != usuario.Id)
             {
                 return NotFound();
@@ -185,6 +255,10 @@ namespace SisInventario.Controllers
         // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             if (id == null || _context.Usuarios == null)
             {
                 return NotFound();
@@ -205,6 +279,10 @@ namespace SisInventario.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            if (_validateSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             if (_context.Usuarios == null)
             {
                 return Problem("Entity set 'InventarioContext.Usuarios'  is null.");

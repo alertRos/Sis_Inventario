@@ -239,6 +239,7 @@ public partial class InventarioContext : DbContext
                 .HasForeignKey(d => d.IdNegocio)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Negocio_Usuario");
+            entity.Ignore(u => u.ConfirmPassword);
         });
 
         OnModelCreatingPartial(modelBuilder);

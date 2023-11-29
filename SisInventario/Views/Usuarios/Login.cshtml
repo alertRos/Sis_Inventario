@@ -3,71 +3,50 @@
     ViewData["Title"] = "Login";
 }
 
+
 <link rel="stylesheet" href="~/css/site.css"/>
+
 <div class="container" id="container">
-    <!-- Registro -->
-    <div class="form-container sign-up-container">
-        <form method="post" asp-controller="Usuarios" asp-action="Create">
-            <h1>Crea una cuenta</h1>
-            <div class="input-with-icon">
-                <i class="fa-regular fa-user"></i>
-                <input asp-for="Nombre" type="text" placeholder="Nombre" />
-            </div>
-            <div class="input-with-icon">
-                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
-                <input asp-for="Password" type="password" placeholder="Contraseña" required />
-            </div>
-            <div class="input-with-icon">
-                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
-                <input asp-for="ConfirmPassword" type="password" placeholder="Contraseña" required />
-            </div>
-            <div class="input-with-icon">
-                <i class="fa-regular fa-id-card"></i>
-                <input asp-for="Email" type="email" placeholder="Email" />
-            </div>
-            <div class="input-with-icon">
-                <i class="fa-regular fa-id-card"></i>
-                <input asp-for="IdNegocio" type="number" placeholder="Negocio" />
-            </div>
-            <div class="input-with-icon">
-                <i class="fa-regular fa-id-card"></i>
-                <input asp-for="IdRole" type="number" placeholder="Role" />
-            </div>
-            <button class="res">Registrarme</button>
-        </form>
-    </div>
     <!-- Login -->
-    <div class="form-container sign-in-container">
-        <form method="post" asp-controller="Usuarios" asp-action="Login">
+    <div class="form-container sign-in-container needs-validation">
+        <form class="needs-validation" method="post" asp-controller="Usuarios" asp-action="Login">
             <h1>Bienvenido al sistema de inventario</h1>
             <span>Iniciar Sesion</span>
             <div class="input-with-icon">
                 <i class="fa-regular fa-user"></i>
-                <input type="email" placeholder="Usuario o Correo" name="email" />
+                <input asp-for="Email" type="email" id="email" class="validationServer form-control" placeholder="Email" />
+                <div id="emailFeedback" class="invalid-feedback">
+                </div>
             </div>
             <div class="input-with-icon">
                 <i><ion-icon name="lock-closed-outline"></ion-icon></i>
-                <input type="password" placeholder="Introduce la contraseña" name="password"/>
+                <input asp-for="Password" type="password" class="validationServer form-control" id="password" placeholder="Contraseña" />
+                <div id="passwordFeedback" class="invalid-feedback">
+                </div>
             </div>
             <a asp-controller="Usuarios" asp-action="ChangePassword" class="fun-pass">Olvidaste la contraseña?</a>
-            <button>Ingresar</button>
-            <p>¿No tienes una cuenta? <a href="#" id="signUp" class="fun-register">Regístrate!</a></p>
+            <button id="submitButton" type="submit">Ingresar</button>
+            <p>¿No tienes una cuenta? <a asp-controller="Usuarios" asp-action="Create" id="signUp" class="fun-register">Regístrate!</a></p>
         </form>
     </div>
     <!-- Plantilla de contenedor  -->
     <div class="overlay-container">
         <div class="overlay">
-            <div class="overlay-panel overlay-left">
-                <div class="image-container">
-                    <img src="~/img/Sign up-rafiki.png" alt="Imagen representativa del resgistro">
-                </div>
-                <button class="inc" id="signIn">Iniciar Sesión</button>
-            </div>
             <div class="overlay-panel overlay-right">
                 <div class="image-container">
                     <img src="~/img/Spreadsheets-pana.png" alt="Imagen representativa del login">
+                    @if (!string.IsNullOrEmpty(ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @Html.Raw(ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<script type="module" src="~/js/login.js"></script>
