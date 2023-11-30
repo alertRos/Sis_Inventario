@@ -9,37 +9,26 @@
     <a asp-action="Create">Create New</a>
     <div class="mb-3">
 
-        <form method="get" asp-controller="Productos" asp-action="GetByNombre">
+        <form method="get" asp-controller="Productos" asp-action="GetBy">
             <div class="mb-3">
-                <input type="text" name="Nombre" class="form-control form-control-lg"
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="idCategoria" class="form-control" asp-items="ViewBag.IdCategoria as SelectList">
+                    <option value="">Seleccione una categoría</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="marca">Marca:</label>
+                <select id="marca" name="idMarca" class="form-control" asp-items="ViewBag.IdMarca as SelectList">
+<option value="">Seleccione una marca</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <input type="text" name="nombre" class="form-control form-control-lg"
                        placeholder="Ingresar el nombre" />
             </div>
             <input type="submit" value="Buscar" class="btn btn-primary" />
         </form>
     </div> 
-
-    <div class="mb-3">
-
-        <form method="get" asp-controller="Productos" asp-action="GetByCategoria">
-            <div class="mb-3">
-                <label for="categoria">Categoría:</label>
-                <select id="categoria" name="Id" class="form-control" asp-items="ViewBag.IdCategoria as SelectList">
-                </select>
-            </div>
-            <input type="submit" value="Buscar" class="btn btn-primary" />
-        </form>
-    </div>
-    <div class="mb-3">
-  
-        <form method="get" asp-controller="Productos" asp-action="GetByMarca">
-            <div class="mb-3">
-                <label for="marca">Marca:</label>
-                <select id="marca" name="Id" class="form-control" asp-items="ViewBag.IdMarca as SelectList">
-                </select>
-            </div>
-            <input type="submit" value="Buscar" class="btn btn-primary" />
-        </form>
-    </div>
 
 </p>
 <table class="table">
@@ -64,13 +53,13 @@
                 @Html.DisplayNameFor(model => model.Stock)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdCategoriaNavigation)
+                @Html.DisplayNameFor(model => model.NombreCategoria)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdMarcaNavigation)
+                @Html.DisplayNameFor(model => model.NombreMarca)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdProveedorNavigation)
+                @Html.DisplayNameFor(model => model.NombreProveedor)
             </th>
             <th></th>
         </tr>
@@ -97,13 +86,13 @@
                 @Html.DisplayFor(modelItem => item.Stock)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.Id)
+                @Html.DisplayFor(modelItem => item.NombreMarca)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdMarcaNavigation.Id)
+                @Html.DisplayFor(modelItem => item.NombreCategoria)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdProveedorNavigation.Id)
+                @Html.DisplayFor(modelItem => item.NombreProveedor)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

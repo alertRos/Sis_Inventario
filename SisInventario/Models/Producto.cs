@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SisInventario.Models;
 
@@ -25,8 +26,16 @@ public partial class Producto
 
     public int IdProveedor { get; set; }
     public int IdNegocio { get; set; }
-    public Negocios Negocios { get; set; } 
+    public Negocios Negocios { get; set; }
 
+
+    //Not Mapped
+    [NotMapped]
+    public string NombreCategoria { get; set; } = null!;
+    [NotMapped]
+    public string NombreMarca { get; set; } = null!;
+    [NotMapped]
+    public string NombreProveedor { get; set; } = null!;
     public virtual Categorias IdCategoriaNavigation { get; set; } = null!;
 
     public virtual Marcas IdMarcaNavigation { get; set; } = null!;
