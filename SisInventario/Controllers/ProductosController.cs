@@ -28,21 +28,24 @@ namespace SisInventario.Controllers
             return View(await inventarioContext.ToListAsync());
         }
 
-        public async Task<IActionResult> GetByFecha (string year)
+
+        public async Task<IActionResult> GetByNombre(string Nombre)
         {
             var inventarioContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation).Include(p => p.IdProveedorNavigation);
-            var productosByFecha = await inventarioContext.Where(p => p.FechaCaducidad.Value.Year.ToString() == year).ToListAsync();
+            var productosByNombre = await inventarioContext.Where(p => p.Nombre == Nombre).ToListAsync();
             ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Categoria");
             ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Marca");
-            return View("Index", productosByFecha);
+
+            return View("Index", productosByNombre);
         }
+
+
         public async Task<IActionResult> GetByCategoria(int Id)
         {
             var inventarioContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation).Include(p => p.IdProveedorNavigation);
             var productosByCategoria = await inventarioContext.Where(p => p.IdCategoriaNavigation.Id == Id).ToListAsync();
             ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Categoria");
             ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Marca");
-
 
             return View("Index", productosByCategoria);
         }
