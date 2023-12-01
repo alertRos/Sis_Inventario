@@ -35,6 +35,10 @@ namespace SisInventario.Controllers
                 FechaCaducidad = p.FechaCaducidad,
                 AreaUbicacion = p.AreaUbicacion,
                 Stock = p.Stock,
+                IdMarca = p.IdMarca,
+                IdCategoria = p.IdCategoria,
+                IdProveedor = p.IdProveedor,
+                Id = p.Id,
                 NombreProveedor = p.IdProveedorNavigation.Proveedor,
 
             }).ToListAsync();
@@ -51,23 +55,39 @@ namespace SisInventario.Controllers
                     return RedirectToAction(nameof(Index));
                 }
                 var inventarioContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdMarcaNavigation).Include(p => p.IdProveedorNavigation);
-                var productos = await inventarioContext.ToListAsync();
+                var listProductos = await inventarioContext.Select(p => new Producto
+                {
+                    Nombre = p.Nombre,
+                    Precio = p.Precio,
+                    Descripcion = p.Descripcion,
+                    NombreCategoria = p.IdCategoriaNavigation.Categoria,
+                    NombreMarca = p.IdMarcaNavigation.Marca,
+                    FechaCaducidad = p.FechaCaducidad,
+                    AreaUbicacion = p.AreaUbicacion,
+                    Stock = p.Stock,
+                    NombreProveedor = p.IdProveedorNavigation.Proveedor,
+                    IdMarca = p.IdMarca,
+                    IdCategoria = p.IdCategoria,
+                    IdProveedor = p.IdProveedor,
+                    Id = p.Id
+
+                }).ToListAsync();
                 if (nombre != null)
                 {
-                    productos = productos.Where(p => p.Nombre == nombre).ToList();
+                    listProductos = listProductos.Where(p => p.Nombre == nombre).ToList();
                 }
                 if (idCategoria != null)
                 {
-                    productos = productos.Where(p => p.IdCategoria == idCategoria).ToList();
+                    listProductos = listProductos.Where(p => p.IdCategoria == idCategoria).ToList();
                 }
                 if (idMarca != null)
                 {
-                    productos = productos.Where(p => p.IdMarca == idMarca).ToList();
+                    listProductos = listProductos.Where(p => p.IdMarca == idMarca).ToList();
                 }
                 ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Categoria");
                 ViewData["IdMarca"] = new SelectList(_context.Marcas, "Id", "Marca");
 
-                return View("Index", productos);
+                return View("Index", listProductos);
 
 
             }
