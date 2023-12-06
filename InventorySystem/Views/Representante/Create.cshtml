@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="~/css/site.css" />
 
 <div class="container" id="container">
-    <div class="form-container sign-in-container needs-validation">
+    <div class="form-container  sign-in-container needs-validation">
 
-        <form class="needs-validation" method="post" asp-controller="Representante" asp-action="@(user != false ? "Register" : "Create")">
+        <form class="needs-validation validationServer" method="post" asp-controller="Representante" asp-action="@(user != false ? "Register" : "Create")">
             <span>Crea una cuenta</span>
             <div class="input-with-icon form-input">
                 <i class="fa-regular fa-user"></i>
@@ -22,19 +22,19 @@
                 </div>
             </div>
             <div class="input-with-icon">
-                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
+                <i class="fa-regular fa-user"></i>
                 <input asp-for="Apellido" type="text" class="validationServer form-control" id="apellido" placeholder="Apellido" />
                 <div id="apellidoFeedback" class="invalid-feedback">
                 </div>
             </div>
             <div class="input-with-icon">
-                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
+                <i class="fa-regular fa-id-card"></i>
                 <input asp-for="Cedula" id="cedula" type="text" class="validationServer form-control" placeholder="Cedula"  />
                 <div id="cedulaFeedback" class="invalid-feedback">
                 </div>
             </div>
             <div class="input-with-icon">
-                <i class="fa-regular fa-id-card"></i>
+                <i class="fa-solid fa-phone"></i>
                 <input asp-for="Telefono" type="text" id="telefono" class="validationServer form-control" placeholder="Telefono" />
                 <div id="telefonoFeedback" class="invalid-feedback">
                 </div>
@@ -42,7 +42,7 @@
             @if(user == true)
             {
                 <div class="input-with-icon">
-                    <select asp-for="IdUsuario" id="usuarip" asp-items="@(new SelectList(Model.usuarioViewModels,"Id", "Nombre"))" class="validationServer form-control">
+                    <select asp-for="IdUsuario" id="usuario" asp-items="@(new SelectList(Model.usuarioViewModels,"Id", "Nombre"))" class="validationServer form-control">
                     <option value="0">-- Select a usuario --</option>
                 </select>
                     <div id="usuarioFeedback" class="invalid-feedback">

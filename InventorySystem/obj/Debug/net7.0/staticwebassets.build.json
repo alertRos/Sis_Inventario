@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4TJ8YgC5EH0hLIRCvCyaHqIHZsuMkXCgKBjPKfZMgKg=",
+  "Hash": "ZjKiF8+73UnKubaol6QelehK+ztgQqFeMJfrsqbowMU=",
   "Source": "InventorySystem",
   "BasePath": "_content/InventorySystem",
   "Mode": "Default",
@@ -219,6 +219,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\register.js"
+    },
+    {
+      "Identity": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\wwwroot\\js\\Representante.js",
+      "SourceId": "InventorySystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\wwwroot\\",
+      "BasePath": "_content/InventorySystem",
+      "RelativePath": "js/Representante.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Representante.js"
     },
     {
       "Identity": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\wwwroot\\js\\site.js",

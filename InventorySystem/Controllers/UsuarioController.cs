@@ -40,7 +40,7 @@ namespace InventorySystem.Controllers
             }
             else
             {
-                ModelState.AddModelError("userValidation", "Usuario o contraseña incorrecta");
+                ModelState.AddModelError("Email", "Usuario o contraseña incorrecta");
             }
             return View(vm);
         }
@@ -113,6 +113,59 @@ namespace InventorySystem.Controllers
             }
             var usuario = await _usuarioService.Add(vm);
             return RedirectToRoute(new { controller = "Representante", action = "Create", idNegocio = vm.IdNegocio, idUsuario = usuario.Id });
+        }
+
+        public async Task<IActionResult> Password(int id)
+        {
+            if (_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+
+            var vm = await _usuarioService.GetById(id);
+            return View(vm);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Password(UsuarioSaveViewModel vm)
+        {
+            if (_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View(vm);
+            }
+            vm.Password = PasswordEncryption.Encrypt(vm.Password);
+            await _usuarioService.Update(vm);
+            return RedirectToRoute(new { controller = "Usuario", action = "Login" });
+        }
+
+        public async Task<IActionResult> ChangePassword()
+        {
+            if (_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(UsuarioSaveViewModel vm)
+        {
+            if (_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+
+            var user = await _usuarioService.ChangePassword(vm);
+            if (user == null)
+            {
+                return View(vm);
+            }
+
+            return RedirectToAction(nameof(Login));
         }
     }
 }

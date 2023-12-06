@@ -1,7 +1,9 @@
-﻿using InventorySystem.Core.Application.Interface.Repositories;
+﻿using InventorySystem.Core.Application.DTO;
+using InventorySystem.Core.Application.Interface.Repositories;
 using InventorySystem.Core.Application.Interface.Services;
 using InventorySystem.Core.Application.ViewModel.Usuario;
 using InventorySystem.Core.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,14 +15,36 @@ namespace InventorySystem.Core.Application.Services
     public class UsuarioService : IUsuarioService
     {
         private readonly IUsuarioRepository _repository;
-        public UsuarioService(IUsuarioRepository repository)
+        private readonly IEmailService _emailService;
+        public UsuarioService(IUsuarioRepository repository, IEmailService emailService)
         {
             _repository = repository;
+            _emailService = emailService;
+
         }
         public async Task<bool> GetEmail(UsuarioSaveViewModel vm)
         {
             var user = await _repository.GetEmail(vm);
             return user;
+        }
+
+        public async Task<Usuario> ChangePassword(UsuarioSaveViewModel vm)
+        {
+            var user = await _repository.ChangePassword(vm);
+            if(user != null)
+            {
+                string enlace = "https://localhost:44325/Usuario/Edit/" + user.Id;
+                EmailRequest emailRequest = new()
+                {
+                    To = user.Email,
+                    Subject = "Recuperación de contraseña",
+                    Body = "Hacer clic aqui, para cambiar contraseña:  " + ' ' + $"<a href=\"{enlace}\">Enlace</a>"
+                };
+                await _emailService.SendEmailAsync(emailRequest);
+                return user;
+            }
+            return user;
+            
         }
         public async Task<UsuarioViewModel> Login(LoginViewModel vm)
         {
@@ -86,9 +110,16 @@ namespace InventorySystem.Core.Application.Services
             }).ToList();
         }
 
-        public Task<UsuarioSaveViewModel> GetById(int id)
+        public async Task<UsuarioSaveViewModel> GetById(int id)
         {
-            throw new NotImplementedException();
+            var user = await _repository.GetByIdAsync(id);
+            UsuarioSaveViewModel usuarioSave = new();
+            usuarioSave.Id = user.Id;
+            usuarioSave.Nombre = user.Nombre;
+            usuarioSave.Email = user.Email;
+            usuarioSave.Password = user.Password;
+            usuarioSave.RoleName = user.RoleName;
+            return usuarioSave;
         }
 
         public async Task<UsuarioSaveViewModel> Update(UsuarioSaveViewModel vm)

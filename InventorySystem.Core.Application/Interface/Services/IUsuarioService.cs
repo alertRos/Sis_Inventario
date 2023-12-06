@@ -1,4 +1,5 @@
 ﻿using InventorySystem.Core.Application.ViewModel.Usuario;
+using InventorySystem.Core.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace InventorySystem.Core.Application.Interface.Services
     {
         Task<bool> GetEmail(UsuarioSaveViewModel vm);
         Task<UsuarioViewModel> Login(LoginViewModel vm);
+        Task<Usuario> ChangePassword(UsuarioSaveViewModel vm);
     }
 }

@@ -74,9 +74,15 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                             </div>
                     }
-                    
+                    @if (!string.IsNullOrEmpty(ViewData.ModelState["ConfirmPassword"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @Html.Raw(ViewData.ModelState["ConfirmPassword"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
                     </div>
-                    <a  asp-controller="Usuarios" asp-action="Login" class="inc registe" id="signIn">Iniciar Sesión</a>
+                    <a  asp-controller="Usuario" asp-action="Login" class="inc registe" id="signIn">Iniciar Sesión</a>
                 </div>
 
             </div>

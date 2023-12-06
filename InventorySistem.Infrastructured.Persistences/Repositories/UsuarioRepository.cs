@@ -39,5 +39,11 @@ namespace InventorySystem.Infrastructured.Persistences.Repositories
             Usuario users = await _context.Set<Usuario>().FirstOrDefaultAsync(x => x.Email == vm.Email && x.Password == passwordEncrypt);
             return users;
         }
+
+        public async Task<Usuario> ChangePassword(UsuarioSaveViewModel usuario)
+        {
+            Usuario user = await _context.Set<Usuario>().FirstOrDefaultAsync(u => u.Email == usuario.Email);
+            return user;
+        }
     }
 }

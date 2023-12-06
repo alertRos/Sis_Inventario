@@ -1,6 +1,6 @@
-﻿import { validarInput }  from "./index.js";
+﻿import { validarInput } from "./index.js";
 
-const inputs = ['nombre', 'password', 'email', 'confirm', 'role'];
+const inputs = ['nombre', 'password', 'email', 'confirm'];
 document.addEventListener('DOMContentLoaded', function () {
     inputs.forEach(item => {
         var inputElement = document.getElementById(item);
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-    var submitButton = document.getElementById('submitButton');
+var submitButton = document.getElementById('submitButton');
 submitButton.addEventListener('click', function (event) {
     inputs.forEach(item => {
         var inputElement = document.getElementById(item);

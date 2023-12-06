@@ -13,5 +13,6 @@ namespace InventorySystem.Core.Application.Interface.Repositories
     {
         Task<Usuario> LoginAsync(LoginViewModel vm);
         Task<bool> GetEmail(UsuarioSaveViewModel vm);
+        Task<Usuario> ChangePassword(UsuarioSaveViewModel usuario);
     }
 }

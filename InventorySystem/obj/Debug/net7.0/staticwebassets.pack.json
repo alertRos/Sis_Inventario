@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\img\\Spreadsheets-pana.png"
     },
     {
+      "Id": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\wwwroot\\js\\Representante.js",
+      "PackagePath": "staticwebassets\\js\\Representante.js"
+    },
+    {
       "Id": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\wwwroot\\js\\changePassword.js",
       "PackagePath": "staticwebassets\\js\\changePassword.js"
     },
