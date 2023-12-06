@@ -1,0 +1,15 @@
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\bin\Debug\net7.0\InventorySistem.Core.Application.deps.json
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\bin\Debug\net7.0\InventorySistem.Core.Application.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\bin\Debug\net7.0\InventorySistem.Core.Application.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\bin\Debug\net7.0\InventorySystem.Core.Domain.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\bin\Debug\net7.0\InventorySystem.Core.Domain.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.csproj.AssemblyReference.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.AssemblyInfoInputs.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.AssemblyInfo.cs
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.csproj.CoreCompileInputs.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.csproj.CopyComplete
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\refint\InventorySistem.Core.Application.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\InventorySistem.Core.Application.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Application\obj\Debug\net7.0\ref\InventorySistem.Core.Application.dll

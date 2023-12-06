@@ -1,0 +1,11 @@
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\bin\Debug\net7.0\InventorySystem.Core.Domain.deps.json
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\bin\Debug\net7.0\InventorySystem.Core.Domain.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\bin\Debug\net7.0\InventorySystem.Core.Domain.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\InventorySystem.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\InventorySystem.Core.Domain.AssemblyInfoInputs.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\InventorySystem.Core.Domain.AssemblyInfo.cs
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\InventorySystem.Core.Domain.csproj.CoreCompileInputs.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\InventorySystem.Core.Domain.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\refint\InventorySystem.Core.Domain.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\InventorySystem.Core.Domain.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySystem.Core.Domain\obj\Debug\net7.0\ref\InventorySystem.Core.Domain.dll

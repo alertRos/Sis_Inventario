@@ -1,0 +1,17 @@
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.csproj.AssemblyReference.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.AssemblyInfoInputs.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.AssemblyInfo.cs
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.csproj.CoreCompileInputs.cache
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\bin\Debug\net7.0\InventorySystem.Infrastructured.Persistences.deps.json
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\bin\Debug\net7.0\InventorySystem.Infrastructured.Persistences.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\bin\Debug\net7.0\InventorySystem.Infrastructured.Persistences.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\bin\Debug\net7.0\InventorySystem.Core.Application.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\bin\Debug\net7.0\InventorySystem.Core.Domain.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\bin\Debug\net7.0\InventorySystem.Core.Application.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\bin\Debug\net7.0\InventorySystem.Core.Domain.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.csproj.CopyComplete
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\refint\InventorySystem.Infrastructured.Persistences.dll
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\InventorySystem.Infrastructured.Persistences.pdb
+C:\Users\addie\source\repos\InventorySystem\InventorySistem.Infrastructured.Persistences\obj\Debug\net7.0\ref\InventorySystem.Infrastructured.Persistences.dll
