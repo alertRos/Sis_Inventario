@@ -1,7 +1,12 @@
 ﻿using InventorySystem.Core.Application.Interface.Services;
+using InventorySystem.Core.Application.Services;
 using InventorySystem.Core.Application.ViewModel.Negocio;
+using InventorySystem.Core.Domain.Entities;
 using InventorySystem.Middlewares;
+using InventorySystem.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace InventorySystem.Controllers
 {
@@ -9,9 +14,12 @@ namespace InventorySystem.Controllers
     {
         private readonly INegocioService _negocioService;
         private readonly ValidateUserSession _validateUserSession;
-        public NegocioController(INegocioService negocioService, ValidateUserSession validateUser)
+        private readonly IOperationStatusService _operationStatusService;
+
+        public NegocioController(INegocioService negocioService, ValidateUserSession validateUser, IOperationStatusService operationStatus)
         {
             _negocioService = negocioService;
+            _operationStatusService = operationStatus;
             _validateUserSession = validateUser;
         }
         public async Task<IActionResult> Index()
@@ -47,8 +55,15 @@ namespace InventorySystem.Controllers
             {
                 return View(vm);
             }
-            var negocio = await _negocioService.Add(vm);
-            return RedirectToRoute(new { controller = "Usuario", action = "Create", idNegocio =negocio.Id });
+            var negocio = await _negocioService.GetByNombre(vm.Nombre);
+            if (negocio == true)
+            {
+                ModelState.AddModelError("Nombre", "El nombre de negocio ya está registrado.");
+                return View("Create", vm);
+            }
+            _operationStatusService.OperationSuccess = true;
+            TempData["Negocio"] = JsonConvert.SerializeObject(vm);
+            return RedirectToRoute(new { controller = "Usuario", action = "Create" });
         }
         public async Task<IActionResult> Edit(int id)
         {

@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "MQWwW7i+ue+nCSIHlA069VwlPXz+0BTqw1hSGQ+xGiAaP9ekrelk+ZkWUKa7gkU9PhCoZysYfJk9u8gg+4LzKw==",
   "success": true,
   "projectFilePath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj",
+=======
+  "dgSpecHash": "gdljTQbJXa3uCG9PGaMs+Quq1HBkzOGALD0TJbWg6nIVtaGs5quocMQ9dvBTWsaQsR3YIucLIEkuj4mrI879oA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj",
+>>>>>>> 1298eadc4944d1a49a3b8a2e863f609fd7b50bc1
   "expectedPackageFiles": [
     "C:\\Users\\rabri\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\rabri\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

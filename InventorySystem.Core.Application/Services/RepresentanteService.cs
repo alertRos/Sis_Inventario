@@ -19,6 +19,17 @@ namespace InventorySystem.Core.Application.Services
             _representanteRepository = representanteRepository;
         }
 
+        public async Task<bool> GetbyCedula(string cedula)
+        {
+            var representante = await _representanteRepository.GetByCedula(cedula);
+            if (representante == false)
+            {
+                return false;
+            }
+            return true;
+
+        }
+
         public async Task<RepresentanteSaveViewModel> Add(RepresentanteSaveViewModel vm)
         {
             Representante representante = new();

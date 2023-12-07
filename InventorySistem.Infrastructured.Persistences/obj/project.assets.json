@@ -3110,11 +3110,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj",
       "projectName": "InventorySystem.Infrastructured.Persistences",
       "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj",
       "packagesPath": "C:\\Users\\rabri\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj",
+      "projectName": "InventorySystem.Infrastructured.Persistences",
+      "projectPath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj",
+      "packagesPath": "C:\\Users\\addie\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\obj\\",
+>>>>>>> 1298eadc4944d1a49a3b8a2e863f609fd7b50bc1
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3131,11 +3139,19 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj": {
               "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj"
             },
             "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Domain\\InventorySystem.Core.Domain.csproj": {
               "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Domain\\InventorySystem.Core.Domain.csproj"
+=======
+            "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj": {
+              "projectPath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj"
+            },
+            "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Core.Domain\\InventorySystem.Core.Domain.csproj": {
+              "projectPath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Core.Domain\\InventorySystem.Core.Domain.csproj"
+>>>>>>> 1298eadc4944d1a49a3b8a2e863f609fd7b50bc1
             }
           }
         }

@@ -9,5 +9,6 @@ namespace InventorySystem.Core.Application.Interface.Services
 {
     public interface IRepresentanteService:IGenericService<RepresentanteSaveViewModel, RepresentanteViewModel>
     {
+        Task<bool> GetbyCedula(string cedula);
     }
 }

@@ -77,6 +77,17 @@ namespace InventorySystem.Core.Application.Services
             return negocioSave;
         }
 
+        public async Task<bool> GetByNombre(string nombre)
+        {
+            var negocio =await _repository.GetByNombre(nombre);
+            if (negocio == false)
+            {
+                return false;
+            }
+            return true;
+
+        }
+
         public async Task<NegocioSaveViewModel> Update(NegocioSaveViewModel vm)
         {
             Negocios negocio = new();

@@ -79,7 +79,6 @@ namespace InventorySystem.Core.Application.Services
             usuarioSave.Email = usuario.Email;
             usuarioSave.Password = usuario.Password;
             usuarioSave.RoleName = usuario.RoleName;
-            usuarioSave.IdNegocio = vm.IdNegocio;
             return usuarioSave;
             
         }
