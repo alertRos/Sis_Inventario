@@ -3621,24 +3621,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\addie\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\rabri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\InventorySystem.csproj",
+      "projectUniqueName": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\InventorySystem.csproj",
       "projectName": "InventorySystem",
-      "projectPath": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\InventorySystem.csproj",
-      "packagesPath": "C:\\Users\\addie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem\\obj\\",
+      "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\InventorySystem.csproj",
+      "packagesPath": "C:\\Users\\rabri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\addie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\rabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3646,21 +3641,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj": {
-              "projectPath": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj"
+            "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj": {
+              "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySistem.Infrastructured.Persistences\\InventorySystem.Infrastructured.Persistences.csproj"
             },
-            "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj": {
-              "projectPath": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj"
+            "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj": {
+              "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj"
             },
-            "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj": {
-              "projectPath": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj"
+            "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj": {
+              "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj"
             }
           }
         }
@@ -3701,7 +3695,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
