@@ -5,6 +5,8 @@ using InventorySystem.Core.Application.Helper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using InventorySystem.Core.Domain.Entities;
+using InventorySystem.Core.Application.ViewModel.Negocio;
+using Newtonsoft.Json;
 
 namespace InventorySystem.Controllers
 {
@@ -83,17 +85,21 @@ namespace InventorySystem.Controllers
             await _usuarioService.Add(vm);
             return RedirectToRoute(new { controller = "Representante", action = "Create" });
         }
-        public async Task<IActionResult> Create(int idNegocio)
+
+        [ServiceFilter(typeof(ValidarNegocioCreateFilterAttribute))]
+        public async Task<IActionResult> Create()
         {
             if (_validateUserSession.hasUser())
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-            UsuarioSaveViewModel vm = new();
-            vm.IdNegocio = idNegocio;
-            vm.RoleName = "Administrador";
-            return View(vm);
+
+                UsuarioSaveViewModel vm = new();
+                vm.RoleName = "Administrador";
+
+                return View(vm);
         }
+
         [HttpPost]
         public async Task<IActionResult> Create(UsuarioSaveViewModel vm)
         {
@@ -111,8 +117,9 @@ namespace InventorySystem.Controllers
                 ModelState.AddModelError("Email", "El correo electrónico ya está registrado.");
                 return View("Create", vm);
             }
-            var usuario = await _usuarioService.Add(vm);
-            return RedirectToRoute(new { controller = "Representante", action = "Create", idNegocio = vm.IdNegocio, idUsuario = usuario.Id });
+            TempData["Usuario"] = JsonConvert.SerializeObject(vm);
+
+            return RedirectToRoute(new { controller = "Representante", action = "Create" });
         }
 
         public async Task<IActionResult> Password(int id)
@@ -166,6 +173,12 @@ namespace InventorySystem.Controllers
             }
 
             return RedirectToAction(nameof(Login));
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToRoute(new { controller = "Home", action = "Index" });
         }
     }
 }

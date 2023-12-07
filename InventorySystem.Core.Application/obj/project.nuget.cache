@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UJq7d+0lI5RP+XEwy2eY22pVa6JqN/7PUL8Nh7dXrhtOqJYUw0CvQA0kKtwNo23p9Htdj+4YsC/ukzMQsXqYAQ==",
+  "dgSpecHash": "ppIVQdfLcD7eK3rRqTDzddBf0+Wbb9h6virRf1dP5JUkMMLaHIpWIpzu4O//5opR9F6WHWdQCwyQ0EQTM8QPrA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj",
+  "projectFilePath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\addie\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\addie\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

@@ -10,6 +10,13 @@
 <h4>Negocios</h4>
 <hr />
 <div class="row">
+    @if (!string.IsNullOrEmpty(ViewData.ModelState["Nombre"]?.Errors.FirstOrDefault()?.ErrorMessage))
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @Html.Raw(ViewData.ModelState["Nombre"]?.Errors.FirstOrDefault()?.ErrorMessage)
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
     <div class="col-md-4">
         <form asp-action="Create" asp-asp-controller="Negocio">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>

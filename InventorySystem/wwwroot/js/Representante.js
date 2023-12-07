@@ -1,6 +1,6 @@
 ﻿import { validarInput } from "./index.js";
 
-const inputs = ['nombre', 'cedula', 'apellido', 'usuario'];
+const inputs = ['nombre', 'apellido', 'cedula', 'telefono'];
 document.addEventListener('DOMContentLoaded', function () {
     inputs.forEach(item => {
         var inputElement = document.getElementById(item);

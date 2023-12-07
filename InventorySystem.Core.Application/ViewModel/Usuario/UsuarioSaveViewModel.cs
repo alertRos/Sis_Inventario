@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventorySystem.Core.Application.ViewModel.Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,6 +17,5 @@ namespace InventorySystem.Core.Application.ViewModel.Usuario
         public string ConfirmPassword { get; set; }
         public string Email { get; set; }
         public string RoleName { get; set; }
-        public int? IdNegocio { get; set; }
     }
 }

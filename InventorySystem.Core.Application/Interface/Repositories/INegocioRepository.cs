@@ -9,5 +9,6 @@ namespace InventorySystem.Core.Application.Interface.Repositories
 {
     public interface INegocioRepository: IGenericRepository<Negocios>
     {
+        Task<bool> GetByNombre(string nombre);
     }
 }

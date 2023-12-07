@@ -1,8 +1,11 @@
 ﻿using InventorySystem.Core.Application.Interface.Services;
 using InventorySystem.Core.Application.ViewModel.Categoria;
+using InventorySystem.Core.Application.ViewModel.Negocio;
 using InventorySystem.Core.Application.ViewModel.Representante;
+using InventorySystem.Core.Application.ViewModel.Usuario;
 using InventorySystem.Middlewares;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace InventorySystem.Controllers
 {
@@ -10,10 +13,12 @@ namespace InventorySystem.Controllers
     {
         private readonly IRepresentanteService _representanteService;
         private readonly IUsuarioService _usuarioService;
+        private readonly INegocioService _negocioService;
         private readonly ValidateUserSession _validateUserSession;
-        public RepresentanteController(IRepresentanteService representanteService, IUsuarioService usuarioService, ValidateUserSession validateUser)
+        public RepresentanteController(INegocioService negocio,IRepresentanteService representanteService, IUsuarioService usuarioService, ValidateUserSession validateUser)
         {
             _representanteService = representanteService;
+            _negocioService = negocio;
             _usuarioService = usuarioService;
             _validateUserSession = validateUser;
         }
@@ -60,19 +65,36 @@ namespace InventorySystem.Controllers
             await _representanteService.Add(vm);
             return RedirectToRoute(new { controller = "Representante", action = "Index" });
         }
+        
 
-        public async Task<IActionResult> Create(int idNegocio, int idUsuario)
+        public async Task<IActionResult> Create()
         {
             if (_validateUserSession.hasUser())
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-
             RepresentanteSaveViewModel vm = new();
-            vm.usuarioViewModels = await _usuarioService.GetAllViewModel();
-            vm.IdNegocio = idNegocio;
-            vm.IdUsuario = idUsuario;
-            return View();
+            if (TempData["Usuario"] is string usuarioJson)
+            {
+                // Deserializar el JSON a un objeto NegocioSaveViewModel
+                var user = JsonConvert.DeserializeObject<UsuarioSaveViewModel>(usuarioJson);
+
+
+                vm.usuario = user;
+                if (TempData["Negocio"] is string negocioJson)
+                {
+                    // Deserializar el JSON a un objeto NegocioSaveViewModel
+                    var negocioVm = JsonConvert.DeserializeObject<NegocioSaveViewModel>(negocioJson);
+                    vm.negocio = negocioVm;
+                }
+                var negocio = await _negocioService.Add(vm.negocio);
+                var usuario = await _usuarioService.Add(vm.usuario);
+                vm.IdNegocio = negocio.Id;
+                vm.IdUsuario = usuario.Id;
+                vm.usuarioViewModels = await _usuarioService.GetAllViewModel();
+            }
+
+            return View(vm);
         }
 
         [HttpPost]
@@ -82,10 +104,17 @@ namespace InventorySystem.Controllers
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
+            
             if (!ModelState.IsValid)
             {
                 vm.usuarioViewModels = await _usuarioService.GetAllViewModel();
                 return View(vm);
+            }
+            var representante = await _representanteService.GetbyCedula(vm.Cedula);
+            if (representante == true)
+            {
+                ModelState.AddModelError("Cedula", "La cedula ya está registrado.");
+                return View("Create", vm);
             }
             await _representanteService.Add(vm);
             return RedirectToRoute(new { controller = "Usuario", action = "Login" });

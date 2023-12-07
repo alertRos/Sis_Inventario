@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xdc/arbPoKSom/PZ+wNoQVteje/YebDMTHYwuyI/pOeneaHGfOmll52Bvg8rHOdMyD2gVddajMOUxqumOiMWfQ==",
+  "dgSpecHash": "f45K3NSjxoWJAIfzAPplWUrpfHhUm8PIZRXwZc7RSzB+7bVZj4VvayC88VU1ShvVr/wJ79sq+dvZ02KnIL9tfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\addie\\source\\repos\\InventorySystem\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
+  "projectFilePath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\addie\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\addie\\.nuget\\packages\\mailkit\\4.3.0\\mailkit.4.3.0.nupkg.sha512",
