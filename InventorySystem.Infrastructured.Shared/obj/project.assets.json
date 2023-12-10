@@ -1435,19 +1435,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
       "projectName": "InventorySystem.Infrastructured.Shared",
       "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
       "packagesPath": "C:\\Users\\rabri\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
-      "projectName": "InventorySystem.Infrastructured.Shared",
-      "projectPath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
-      "packagesPath": "C:\\Users\\addie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\obj\\",
->>>>>>> 1298eadc4944d1a49a3b8a2e863f609fd7b50bc1
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1464,13 +1456,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-<<<<<<< HEAD
             "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj": {
               "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj"
-=======
-            "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj": {
-              "projectPath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj"
->>>>>>> 1298eadc4944d1a49a3b8a2e863f609fd7b50bc1
             }
           }
         }
@@ -1513,5 +1500,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

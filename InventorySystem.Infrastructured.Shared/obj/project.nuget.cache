@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "HTab9WuOe7R/wB/PZUA6Ji2dvnox8TqdY6wtrQ7O2XnlG7Li+Fdv0x6nIUlZGL3293K+BimvpnhKoNVij6zRcw==",
   "success": true,
   "projectFilePath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
-=======
-  "dgSpecHash": "f45K3NSjxoWJAIfzAPplWUrpfHhUm8PIZRXwZc7RSzB+7bVZj4VvayC88VU1ShvVr/wJ79sq+dvZ02KnIL9tfQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
->>>>>>> 1298eadc4944d1a49a3b8a2e863f609fd7b50bc1
   "expectedPackageFiles": [
     "C:\\Users\\rabri\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\rabri\\.nuget\\packages\\mailkit\\4.3.0\\mailkit.4.3.0.nupkg.sha512",
@@ -44,5 +38,12 @@
     "C:\\Users\\rabri\\.nuget\\packages\\system.text.encoding.codepages\\7.0.0\\system.text.encoding.codepages.7.0.0.nupkg.sha512",
     "C:\\Users\\rabri\\.nuget\\packages\\system.text.encodings.web\\4.5.0\\system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
