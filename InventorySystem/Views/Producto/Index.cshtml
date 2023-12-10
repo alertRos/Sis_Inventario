@@ -1,137 +1,148 @@
-﻿@model IEnumerable<InventorySystem.Core.Application.ViewModel.Producto.ProductoViewModel>
+﻿@using InventorySystem.Core.Application.ViewModel.Categoria;
+@using InventorySystem.Core.Application.ViewModel.Marca;
+@using InventorySystem.Core.Application.ViewModel.Proveedor;
+@using InventorySystem.Core.Application.Helper;
+@using InventorySystem.Core.Application.ViewModel.Usuario;
+@inject IHttpContextAccessor HttpContextAccessor;
+@{
+    var user = HttpContextAccessor.HttpContext.Session.Get<UsuarioViewModel>("user");
+}
+@model IEnumerable<InventorySystem.Core.Application.ViewModel.Producto.ProductoViewModel>
 @{
     ViewData["Title"] = "Index";
 }
+<link rel="stylesheet" href="~/css/productoStyle.css" />
+<style>
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
 
-<h1>Index</h1>
+    .button {
+        background-color: #5DC1B9;
+        border: none;
+        color: white;
+        padding: 5px 20px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+        border-radius: 15px;
+    }
+</style>
+@if (!string.IsNullOrEmpty(ViewData.ModelState["Producto"]?.Errors.FirstOrDefault()?.ErrorMessage))
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @Html.Raw(ViewData.ModelState["Producto"]?.Errors.FirstOrDefault()?.ErrorMessage)
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+<div class="main-container">
 
-<p>
-    <a asp-controller="Producto" asp-action="Create">Create New</a>
-    <div class="mb-3">
+    <form method="get" asp-controller="Producto" asp-action="GetBy">
 
-        <form method="get" asp-controller="Productos" asp-action="GetBy">
-            <div class="mb-3">
-                <label for="categoria">Categoría:</label>
-                <select id="categoria" name="idCategoria" class="form-control" asp-items="ViewBag.IdCategoria as SelectList">
+
+    <div class="container-header">
+        <input type="text" name="nombre" class="search-input" placeholder="Buscar ">
+        @foreach (CategoriaViewModel category in ViewBag.Categorias)
+        {
+            <div class="select-container">
+                <label for="categoria">Categorias:</label>
+                <select id="categoria" name="idCategoria">
                     <option value="">Seleccione una categoría</option>
+                    <option value="@category.Id">@category.Nombre</option>
+                </select>
+
+            </div>
+
+
+        }
+
+        @foreach (MarcaViewModel marca in ViewBag.Marcas)
+        {
+            <div class="select-container">
+                <label for="marca">Marca: </label>
+                <select id="marca" name="idMarca">
+                    <option value="">Seleccione una marca</option>
+                    <option value="@marca.Id">@marca.Nombre</option>
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="marca">Marca:</label>
-                <select id="marca" name="idMarca" class="form-control" asp-items="ViewBag.IdMarca as SelectList">
-<option value="">Seleccione una marca</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <input type="text" name="nombre" class="form-control form-control-lg"
-                       placeholder="Ingresar el nombre" />
-            </div>
-            <input type="submit" value="Buscar" class="btn btn-primary" />
-        </form>
-    </div> 
+        }
+       
+        <div class="select-container">
+            <input type="checkbox" id="caducidad" />
+            <label for="caducidad">Fecha De Caducidad Cercana</label>
+        </div>
+    </div>
 
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Precio)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaCaducidad)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AreaUbicacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Stock)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Marca)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Proveedor)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Precio)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaCaducidad)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AreaUbicacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stock)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Marca)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Proveedor)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productoModal">
-                        Ver Detalles del Producto
-                    </button>
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+        <div class="button-container">
+            <button class="button" type="submit">Buscar</button>
+        </div>
 
+      </form>
+    @foreach (var item in Model)
+    {
+        <div class="product-box">
+            <div class="product-image"><img class="" src="@item.ImgUrl"></div>
+            <div class="product-details">@item.Nombre</div>
+            <div class="product-price">$@item.Precio</div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Contenido del modal, puedes personalizar según tus necesidades -->
-                            <dl class="row">
-                                <dt class="col-sm-3">Nombre:</dt>
-                                <dd class="col-sm-9">@item.Nombre</dd>
+            <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#productoModal-@item.Id">
+                Ver Detalles
+            </button>
+        </div>
+        <div class="modal fade" id="productoModal-@item.Id" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                                    <!-- Agregamos la clase text-center para centrar el contenido -->
+                                    <img class="img-thumbnail mx-auto my-4" style="max-width: 40%; max-height: 150px;" src="@item.ImgUrl" />
 
-                                <dt class="col-sm-3">Precio:</dt>
-                                <dd class="col-sm-9">@item.Precio</dd>
+                        <!-- Contenido del modal, puedes personalizar según tus necesidades -->
+                        <dl class="row">
+                
 
-                                <!-- Agrega más detalles según tus propiedades de modelo -->
-                            </dl>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary">Aceptar</button>
-                        </div>
+                            <dt class="col-sm-3">Nombre:</dt>
+                            <dd class="col-sm-9">@item.Nombre</dd>
+
+                            <dt class="col-sm-3">Precio:</dt>
+                            <dd class="col-sm-9">@item.Precio</dd>
+
+                            <dt class="col-sm-3">Proveedor:</dt>
+                            <dd class="col-sm-9">@item.Proveedor</dd>
+
+                            <dt class="col-sm-3">Categoria:</dt>
+                            <dd class="col-sm-9">@item.Categoria</dd>
+
+                            <dt class="col-sm-3">Marca:</dt>
+                            <dd class="col-sm-9">@item.Marca</dd>
+
+                            <dt class="col-sm-3">Caducidad:</dt>
+                            <dd class="col-sm-9">@item.FechaCaducidad.Value.Year</dd>
+
+                            <!-- Agrega más detalles según tus propiedades de modelo -->
+                        </dl>
+                    </div>
+                    <div class="modal-footer">
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Aceptar</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-}
-    </tbody>
-</table>
+    }
+
+
+    
+</div>

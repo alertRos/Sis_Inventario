@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\Images\\Producto\\13\\3495e40b-e378-451e-a484-10e3835e4d0f.jpg"
     },
     {
+      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\728f076c-f456-4da0-8353-03a18bb935d7.png",
+      "PackagePath": "staticwebassets\\Images\\Producto\\13\\728f076c-f456-4da0-8353-03a18bb935d7.png"
+    },
+    {
+      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\a4fc6ee1-dfb8-4b2e-abbb-b28d0de9d685.png",
+      "PackagePath": "staticwebassets\\Images\\Producto\\13\\a4fc6ee1-dfb8-4b2e-abbb-b28d0de9d685.png"
+    },
+    {
       "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\14\\2e93df17-c752-43fa-b4bd-2d56f91bdf21.jpg",
       "PackagePath": "staticwebassets\\Images\\Producto\\14\\2e93df17-c752-43fa-b4bd-2d56f91bdf21.jpg"
     },
@@ -17,12 +25,28 @@
       "PackagePath": "staticwebassets\\Images\\Producto\\15\\e328d4ce-398e-4a28-8d3d-9ac3bf541161.png"
     },
     {
+      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\16\\6cad0518-f0ed-47b6-8916-f86b9c6ebf0d.png",
+      "PackagePath": "staticwebassets\\Images\\Producto\\16\\6cad0518-f0ed-47b6-8916-f86b9c6ebf0d.png"
+    },
+    {
+      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\2e2fbdf2-0076-4439-b5e7-26557a7c89a7.jpg",
+      "PackagePath": "staticwebassets\\Images\\Producto\\3\\2e2fbdf2-0076-4439-b5e7-26557a7c89a7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\66c1d9ed-3643-416a-ad5c-5345203e31eb.jpg",
+      "PackagePath": "staticwebassets\\Images\\Producto\\3\\66c1d9ed-3643-416a-ad5c-5345203e31eb.jpg"
+    },
+    {
       "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\ChangePassword.css",
       "PackagePath": "staticwebassets\\css\\ChangePassword.css"
     },
     {
       "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\img.jpg",
       "PackagePath": "staticwebassets\\css\\img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\productoStyle.css",
+      "PackagePath": "staticwebassets\\css\\productoStyle.css"
     },
     {
       "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\site.css",

@@ -4,7 +4,10 @@ using InventorySystem.Core.Application.Services;
 using InventorySystem.Core.Application.ViewModel.Marca;
 using InventorySystem.Core.Application.ViewModel.Producto;
 using InventorySystem.Core.Application.ViewModel.Usuario;
+using InventorySystem.Core.Domain.Entities;
+using InventorySystem.Infrastructured.Persistences.Context;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Net.NetworkInformation;
 
 
@@ -27,9 +30,23 @@ namespace InventorySystem.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            ViewBag.Categorias = await _categoryService.GetAllViewModel();
+            ViewBag.Marcas = await _marcaService.GetAllViewModel();
+            ViewBag.Proveedor = await _proveedorService.GetAllViewModel();
             return View(await _productService.GetAllViewModel());
         }
 
+        public async Task<IActionResult> GetBy (string? nombre, int? idMarca, int? idProveedor, int? idCategoria )
+        {
+
+            var productos = await _productService.GetBy(nombre, idMarca, idProveedor, idCategoria);
+            ViewBag.Categorias = await _categoryService.GetAllViewModel();
+            ViewBag.Marcas = await _marcaService.GetAllViewModel();
+            ViewBag.Proveedor = await _proveedorService.GetAllViewModel();
+            ModelState.AddModelError("Producto", "El producto no se encontro.");
+
+            return View("Index", productos);
+            }
         public async Task<IActionResult> Create()
         {
             ProductoSaveViewModel vm = new();
@@ -50,7 +67,7 @@ namespace InventorySystem.Controllers
                 vm.proveedorSaveViews = await _proveedorService.GetAllViewModel();
                 return View(vm);
             }
-            vm.IdNegocio = _HttpContextAccessor.HttpContext.Session.Get<UsuarioSaveViewModel>("user").IdNegocio;
+            vm.IdNegocio = _HttpContextAccessor.HttpContext.Session.Get<UsuarioViewModel>("user").IdNegocio;
             var producto = await _productService.Add(vm);
 
             if(producto != null)
@@ -64,8 +81,11 @@ namespace InventorySystem.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var vm = await _productService.GetById(id);
-            return View(vm);
+            ProductoSaveViewModel vm = await _productService.GetById(id);
+            vm.proveedorSaveViews = await _proveedorService.GetAllViewModel();
+            vm.marcaViewModels = await _marcaService.GetAllViewModel();
+            vm.categoriaViewModels = await _categoryService.GetAllViewModel();
+            return View("Create",vm);
         }
 
         [HttpPost]
@@ -73,9 +93,20 @@ namespace InventorySystem.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(vm);
+                vm.proveedorSaveViews = await _proveedorService.GetAllViewModel();
+                vm.marcaViewModels = await _marcaService.GetAllViewModel();
+                vm.categoriaViewModels = await _categoryService.GetAllViewModel();
+                return View("Create",vm);
             }
-            await _productService.Update(vm);
+            if (vm != null && vm.ImgFile !=null)
+            {
+                vm.Id = vm.Id;
+                vm.ImgUrl = AdmFiles.UploadFile(vm.ImgFile, vm.Id, "Producto");
+                await _productService.Update(vm);
+            }else
+            {
+                await _productService.Update(vm);
+            }
             return RedirectToRoute(new { controller = "Producto", action = "Index" });
         }
 

@@ -1,74 +1,112 @@
 ﻿@model InventorySystem.Core.Application.ViewModel.Producto.ProductoSaveViewModel;
 @{
-    ViewData["Title"] = "Create";
+    bool editMode = Model.Id == 0 ? false : true;
+    ViewData["Title"] = editMode ? "Edit Producto" : "Add Producto";
+    int id = Model.Id;
 }
 
-<h1>Create</h1>
-
-<h4>Producto</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create" asp-controller="Producto" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Nombre" class="control-label"></label>
-                <input asp-for="Nombre" class="form-control" />
-                <span asp-validation-for="Nombre" class="text-danger"></span>
+    <div class="col-6 offset-3 p-3 mb-3">
+        <div class="shadow-lg   bg-body-tertiary rounded row d-flex justify-content-center align-items-center ">
+            <div class="card p-2">
+                <div class="card-header gradient text-light" style="background-color:#005954;">
+                    <h4>@(editMode ? $"Editando el producto: {Model.Nombre}" : "Creando un nuevo producto")</h4>
+                </div>
+                <div class="card-body">
+                    <div class=" col mb-4">
+                        @if(editMode){
+                            <img src="@Model.ImgUrl" class="card-img-top" alt="...">
+                        }
+                    </div>
+
+                        <form method="post" asp-controller="Producto" asp-action="@(editMode ? "Edit":"Create")" enctype="multipart/form-data">
+                            
+                           <input type="hidden" asp-for="ImgUrl" />
+                            <div class="form-outline mb-4">
+                                <input asp-for="Nombre" class="form-control form-control-lg"
+                                       placeholder="Ingresar el nombre" />
+                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                @if (editMode)
+                                {
+                                    <input asp-for="ImgFile" accept="image/jpg, image/jpeg, image/png, image/gif" multiple class="form-control form-control-lg"
+                                           placeholder="Seleccione la imagen" />
+
+                                }
+                                else
+                                {
+                                <input asp-for="ImgFile" accept="image/jpg, image/jpeg, image/png, image/gif" multiple required class="form-control form-control-lg"
+                                           placeholder="Seleccione la imagen" />
+                                <span asp-validation-for="ImgFile" class="text-danger"></span>
+
+                                }
+
+                            </div>
+                        <div class="form-outline mb-4">
+                            <input type="date" asp-for="FechaCaducidad" class="form-control form-control-lg"
+                                   placeholder="Ingresar el caducidad" />
+                            <span asp-validation-for="FechaCaducidad" class="text-danger"></span>
+                        </div>
+                            <div class="form-outline mb-4">
+                                <input type="number" asp-for="Precio" class="form-control form-control-lg"
+                                       placeholder="Ingresar el precio" />
+                                <span asp-validation-for="Precio" class="text-danger"></span>
+                            </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" asp-for="AreaUbicacion" class="form-control form-control-lg"
+                                   placeholder="Ingresar el area" />
+                            <span asp-validation-for="AreaUbicacion" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="number" asp-for="Stock" class="form-control form-control-lg"
+                                   placeholder="Ingresar el Stock" />
+                            <span asp-validation-for="Stock" class="text-danger"></span>
+                        </div>
+
+                            <div class="form-outline mb-4">
+                                <textarea asp-for="Descripcion" class="form-control form-control-lg"
+                                          placeholder="Ingresas la descripcion"></textarea>
+                                <span asp-validation-for="Descripcion" class="text-danger"></span>
+                            </div>
+                            <div class="mb-3">
+                                <select asp-for="IdCategoria" asp-items="@(new SelectList(Model.categoriaViewModels,"Id","Nombre"))" class="form-control form-control-lg">
+                                    <option value="0">-- Select a category --</option>
+                                </select>
+                            <span asp-validation-for="IdCategoria" class="text-danger"></span>
+                            </div>
+
+                        <div class="mb-3">
+                            <select asp-for=" IdMarca" asp-items="@(new SelectList(Model.marcaViewModels,"Id","Nombre"))" class="form-control form-control-lg">
+                                <option value="0">-- Select a marca --</option>
+                            </select>
+                            <span asp-validation-for="IdMarca" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <select asp-for="IdProveedor" asp-items="@(new SelectList(Model.proveedorSaveViews,"Id","Nombre"))" class="form-control form-control-lg">
+                                <option value="0">-- Select a proveedor --</option>
+                            </select>
+                            <span asp-validation-for="IdProveedor" class="text-danger"></span>
+                        </div>
+
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="IdNegocio"/>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <a asp-controller="Producto" asp-action="Index" class="btn btn-danger">Volver atras</a>
+
+                        </form>
+                    
+
+
+                </div>
+
             </div>
-            <div class="form-group">
-                <label asp-for="Precio" class="control-label"></label>
-                <input asp-for="Precio" class="form-control" />
-                <span asp-validation-for="Precio" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdCategoria" class="control-label"></label>
-                <select asp-for="IdCategoria" class="form-control" asp-items="@(new SelectList(Model.categoriaViewModels,"Id", "Nombre"))"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdMarca" class="control-label"></label>
-                <select asp-for="IdMarca" class="form-control" asp-items="@(new SelectList(Model.marcaViewModels,"Id", "Nombre"))"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaCaducidad" class="control-label"></label>
-                <input asp-for="FechaCaducidad" class="form-control" />
-                <span asp-validation-for="FechaCaducidad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AreaUbicacion" class="control-label"></label>
-                <input asp-for="AreaUbicacion" class="form-control" />
-                <span asp-validation-for="AreaUbicacion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ImgFile" class="control-label"></label>
-                <input asp-for="ImgFile" class="form-control" />
-                <span asp-validation-for="ImgFile" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Stock" class="control-label"></label>
-                <input asp-for="Stock" class="form-control" />
-                <span asp-validation-for="Stock" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdProveedor" class="control-label"></label>
-                <select asp-for="IdProveedor" class="form-control" asp-items="@(new SelectList(Model.proveedorSaveViews,"Id", "Nombre"))"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
+
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

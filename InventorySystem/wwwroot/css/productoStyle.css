@@ -1,0 +1,300 @@
+﻿body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, #78BAB5 0%, rgba(151, 197, 193, 0.00) 68.75%), #FFF;
+    color: #025951;
+    background-repeat: no-repeat;
+}
+
+header {
+    background-color: #025951;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu-icon {
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-left: 10px;
+}
+
+#logout {
+    cursor: pointer;
+    margin-left: 10px; /* Alinea el botón de cerrar sesión al lado izquierdo */
+}
+
+#menu {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: -150px; /* Mueve el menú fuera del área visible */
+    background-color: #025951;
+    width: 150px;
+    height: 100vh;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: left 0.3s ease-in-out;
+}
+
+    #menu.open {
+        left: 0;
+    }
+
+    #menu a {
+        width: 100%;
+        height: 20%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+        border-bottom: 1px solid #fff;
+        transition: background-color 0.3s;
+    }
+
+        #menu a img {
+            max-width: 20px;
+            max-height: 20px;
+            margin-right: 8px;
+            max-width: 20px;
+            max-height: 20px;
+        }
+
+        #menu a:hover {
+            background-color: #084f4a;
+        }
+
+.select-container {
+    display: inline-flex;
+}
+
+.main-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2rem;
+}
+
+.container-header {
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+legend {
+    color: black;
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+fieldset {
+    width: 3rem;
+    height: 27px;
+    border: 2px solid black
+}
+
+.search-input {
+    width: 32rem;
+    padding: 8px;
+    margin-bottom: 1rem;
+    border: 2.5px solid #000000;
+    border-radius: 6px;
+    padding-left: 20px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+label[for="categories"], label[for="brands"], label[for="caducidad"] {
+    font-weight: bold;
+    color: #000000;
+    font-size: 13.5px;
+    position: relative;
+    margin-top: 7px;
+    margin-right: 10px;
+}
+
+label[for="brands"] {
+    margin-left: 1rem;
+}
+
+label[for="caducidad"] {
+    margin-top: 9px;
+    margin-left: 4px;
+}
+
+input[type="checkbox"] {
+    margin-left: 1rem;
+    width: 1rem;
+    height: 1rem;
+    outline: black;
+    position: relative;
+    top: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+label[for="categories"] {
+    margin-left: 2rem;
+}
+
+select {
+    width: 135px;
+    height: 30px;
+    border: 2.5px solid black;
+    border-radius: 6px;
+    padding-right: 10px;
+    display: inline-block;
+    padding-left: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.product-box {
+    display: grid;
+    margin: 5px;
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.product-image {
+    width: 100%;
+    height: 140px;
+    margin-bottom: 1rem;
+    background: #FAFAFA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Para evitar que la imagen se desborde del contenedor si es más grande */
+}
+
+    .product-image img {
+        width: auto;
+        height: 100%;
+        max-width: 100%; /* La imagen no superará el 100% del ancho del contenedor */
+        border-radius: 15px;
+        object-fit: cover; /* Ajusta el tamaño de la imagen sin distorsionarla */
+    }
+
+
+
+.product-details {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.product-price {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 9px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.details-button {
+    background-color: #338B85;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 32px;
+    font-size: 10.8px;
+}
+
+.details-view {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 600px; /* Establece un ancho máximo para el contenido */
+    height: 80%; /* Ajusta la altura según sea necesario */
+    background: linear-gradient(to bottom, #84BFB9, #fff);
+    color: #025951;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.details-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.details-info {
+    width: 100%;
+    max-width: 600px; /* Establece un ancho máximo para el contenido */
+    box-sizing: border-box;
+}
+
+.details-image {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd; /* Placeholder color */
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+img {
+    width: calc(100% - 30px);
+}
+
+.details-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #025951;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.details-back-button {
+    background-color: #025951;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.registe {
+    font-family: 'Fredoka', sans-serif;
+    border-radius: 14px;
+    border: 1px solid #005954;
+    background-color: #005954;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    width: 80%;
+    height: 52px;
+    text-align: center;
+}
+
+    .registe:hover {
+        color: #FFFFFF;
+    }
+/* Rectangle 203 */
+
