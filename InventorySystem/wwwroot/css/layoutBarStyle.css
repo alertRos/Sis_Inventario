@@ -237,16 +237,26 @@
   width: 50px;
   background: none;
 }
+#log_out:hover{
+    cursor: pointer;
+}
+.content-section {
+    position: relative;
+    background: linear-gradient(180deg, #78BAB5 0%, rgba(151, 197, 193, 0.00) 68.75%), #FFF;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+}
 
-.home-section {
-  position: relative;
-  background: linear-gradient(180deg, #78BAB5 0%, rgba(151, 197, 193, 0.00) 68.75%), #FFF;
-  min-height: 100vh;
-  top: 0;
-  left: 78px;
-  width: calc(100% - 78px);
-  transition: all 0.5s ease;
-  z-index: 2;
+.render-body {
+    background: white;
+    margin: 0 6rem 6rem 6rem;
+    position: relative;
+    top: 6rem;
+    padding: 1rem;
 }
 
 .sidebar.open ~ .home-section {

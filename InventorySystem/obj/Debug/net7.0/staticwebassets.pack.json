@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\Images\\Producto\\16\\6cad0518-f0ed-47b6-8916-f86b9c6ebf0d.png"
     },
     {
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\1\\fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp",
+      "PackagePath": "staticwebassets\\Images\\Producto\\1\\fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp"
+    },
+    {
       "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\ChangePassword.css",
       "PackagePath": "staticwebassets\\css\\ChangePassword.css"
     },

@@ -38,18 +38,46 @@
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
+                    <a href="#">
+                        <i class='bx bx-user'></i>
+                        <span class="links_name">Administrar Usuarios</span>
+                    </a>
+                    <span class="tooltip">Administrar Usuarios</span>
+                </li>
+                <li>
                     <a asp-area="" asp-controller="Producto" asp-action="Index">
                         <i class='bx bx-package'></i>
-                        <span class="links_name">Inventario</span>
+                        <span class="links_name">Administrar Inventario</span>
                     </a>
-                    <span class="tooltip">Inventario</span>
+                    <span class="tooltip">Administrar Inventario</span>
                 </li>
-
+                <li>
+                    <a href="#">
+                        <i class='bx bx-category-alt'></i>
+                        <span class="links_name"> Administrar Categorias</span>
+                    </a>
+                    <span class="tooltip">Admininistrar Categorias</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-certification" asp-area="" asp-controller="Marca" asp-action="Index"></i>
+                        <span class="links_name">Administrar Marcas</span>
+                    </a>
+                    <span class="tooltip">Administrar Marcas</span>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bx bxs-box" asp-area="" asp-controller="Proveedores" asp-action="Index"></i>
+                        <span class="links_name">Administrar Proveedores</span>
+                    </a>
+                    <span class="tooltip">Administrar Proveedores</span>
+                </li>
                 <li class="profile">
                     <div class="profile-details">
+                        <!-- Exportar imagen del usuario  -->
                         <img src="#" alt="profileImg">
                         <div class="name_job">
-                            <div class="job">Empleado normal</div>
+                            <div class="job">Administrador</div>
                         </div>
                     </div>
                     <a asp-area="" asp-controller="Usuario" asp-action="Logout"><i class='bx bx-log-out' id="log_out"></i></a>
@@ -85,7 +113,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
-    <script src="~/js/scriptLayoutBar.js"></script>
+    <script src="~/wwwroot/js/scriptLayoutBar.js"></script>
 
 </body>
 </html>

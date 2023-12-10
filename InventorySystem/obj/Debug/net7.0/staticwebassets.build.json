@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4hWJGH/9pAj4QC6cWqV05ad9Ejn9RcS35qOdr9sTCjM=",
+  "Hash": "HuOMrK53N+wBMlFucx1foof4WpJKd+sw9+4aN29AInM=",
   "Source": "InventorySystem",
   "BasePath": "_content/InventorySystem",
   "Mode": "Default",
@@ -134,6 +134,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\1\\fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp",
+      "SourceId": "InventorySystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\",
+      "BasePath": "_content/InventorySystem",
+      "RelativePath": "Images/Producto/1/fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Producto\\1\\fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp"
     },
     {
       "Identity": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\3495e40b-e378-451e-a484-10e3835e4d0f.jpg",
