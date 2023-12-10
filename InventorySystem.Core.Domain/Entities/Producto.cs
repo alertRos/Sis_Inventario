@@ -14,7 +14,7 @@ public partial class Producto : AuditableBaseEntity
     public int IdCategoria { get; set; }
 
     public int IdMarca { get; set; }
-    public string ImgUrl { get; set; }
+    public string? ImgUrl { get; set; }
 
     public DateTime? FechaCaducidad { get; set; }
 

@@ -17,5 +17,6 @@ namespace InventorySystem.Core.Application.ViewModel.Usuario
         public string ConfirmPassword { get; set; }
         public string Email { get; set; }
         public string RoleName { get; set; }
+        public int IdNegocio { get; set; }
     }
 }

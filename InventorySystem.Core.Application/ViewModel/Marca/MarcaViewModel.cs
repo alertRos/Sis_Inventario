@@ -14,5 +14,7 @@ namespace InventorySystem.Core.Application.ViewModel.Marca
 
         public string? Telefono { get; set; }
         public int CountProductos { get; set; }
+        public List<MarcaViewModel> Marcas { get; set; }
+        public int? TotalItems { get; set; }
     }
 }

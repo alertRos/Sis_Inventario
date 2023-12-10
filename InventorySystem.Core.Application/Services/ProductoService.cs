@@ -27,11 +27,11 @@ namespace InventorySystem.Core.Application.Services
             producto.Descripcion = vm.Descripcion;
             producto.IdCategoria = vm.IdCategoria;
             producto.IdMarca = vm.IdMarca;
+            producto.IdNegocio = vm.IdNegocio;
             producto.IdProveedor = vm.IdProveedor;
             producto.FechaCaducidad = vm.FechaCaducidad;
             producto.AreaUbicacion = vm.AreaUbicacion;
             producto.Stock = vm.Stock;
-            producto.ImgUrl = vm.ImgUrl;
             producto = await _repository.AddAsync(producto);
 
             ProductoSaveViewModel vmProducto = new();
@@ -46,6 +46,7 @@ namespace InventorySystem.Core.Application.Services
             vmProducto.AreaUbicacion = producto.AreaUbicacion;
             vmProducto.ImgUrl = producto.ImgUrl;
             vmProducto.Stock = producto.Stock;
+            vmProducto.IdNegocio = producto.IdNegocio;
             return vmProducto;
         }
 
@@ -140,7 +141,7 @@ namespace InventorySystem.Core.Application.Services
 
         public async Task<ProductoSaveViewModel> Update(ProductoSaveViewModel vm)
         {
-            Producto producto = new();
+            Producto producto = await _repository.GetByIdAsync(vm.Id);
             producto.Id = vm.Id;
             producto.Nombre = vm.Nombre;
             producto.Precio = vm.Precio;

@@ -9,5 +9,6 @@ namespace InventorySystem.Core.Application.Interface.Services
 {
     public interface IMarcaService:IGenericService<MarcaSaveViewModel, MarcaViewModel>
     {
+        Task<List<MarcaViewModel>> GetPagination(int paginaActual, int tamanoPagina);
     }
 }

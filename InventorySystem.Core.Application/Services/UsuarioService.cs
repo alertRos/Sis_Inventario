@@ -16,11 +16,12 @@ namespace InventorySystem.Core.Application.Services
     {
         private readonly IUsuarioRepository _repository;
         private readonly IEmailService _emailService;
-        public UsuarioService(IUsuarioRepository repository, IEmailService emailService)
+        private readonly IRepresentanteRepository _representanteRepository;
+        public UsuarioService(IUsuarioRepository repository, IEmailService emailService, IRepresentanteRepository representanteRepository)
         {
             _repository = repository;
             _emailService = emailService;
-
+            _representanteRepository = representanteRepository;
         }
         public async Task<bool> GetEmail(UsuarioSaveViewModel vm)
         {
@@ -49,16 +50,19 @@ namespace InventorySystem.Core.Application.Services
         public async Task<UsuarioViewModel> Login(LoginViewModel vm)
         {
             Usuario users = await _repository.LoginAsync(vm);
-
             if (users == null)
                 return null;
 
+            var representante = await _representanteRepository.GetByUsuario(users.Id);
+
+           
             UsuarioViewModel uservm = new();
             uservm.Id = users.Id;
             uservm.Nombre = users.Nombre;
             uservm.Email = users.Email;
             uservm.Password = users.Password;
             uservm.RoleName = users.RoleName;
+            uservm.IdNegocio = representante.IdNegocio;
 
             return uservm;
         }
@@ -79,6 +83,7 @@ namespace InventorySystem.Core.Application.Services
             usuarioSave.Email = usuario.Email;
             usuarioSave.Password = usuario.Password;
             usuarioSave.RoleName = usuario.RoleName;
+            usuarioSave.IdNegocio = vm.IdNegocio;
             return usuarioSave;
             
         }
@@ -104,7 +109,8 @@ namespace InventorySystem.Core.Application.Services
                 Id = a.Id,
                 Nombre = a.Nombre,
                 Email = a.Email,
-                RoleName = a.RoleName
+                RoleName = a.RoleName,
+
 
             }).ToList();
         }
@@ -118,6 +124,7 @@ namespace InventorySystem.Core.Application.Services
             usuarioSave.Email = user.Email;
             usuarioSave.Password = user.Password;
             usuarioSave.RoleName = user.RoleName;
+            usuarioSave.IdNegocio = user.Representantes.FirstOrDefault().IdNegocio;
             return usuarioSave;
         }
 

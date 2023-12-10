@@ -14,13 +14,17 @@ namespace InventorySystem.Controllers
             _marcaService = marcaService;
             _validateUserSession = validateUserSession;
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int paginaActual, int tamanoPagina)
         {
             if (!_validateUserSession.hasUser())
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-            return View(await _marcaService.GetAllViewModel());
+            var marcasVm = await _marcaService.GetPagination(paginaActual, tamanoPagina);
+            ViewBag.TamanoPagina = tamanoPagina; 
+            ViewBag.PaginaActual = paginaActual;
+
+            return View(marcasVm);
         }
 
         public IActionResult Create()
