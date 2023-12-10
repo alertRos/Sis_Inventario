@@ -9,93 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = InventorySystem
 build_property.RootNamespace = InventorySystem
-build_property.ProjectDir = C:\Users\rabri\source\repos\Sis_Inventario\InventorySystem\
+build_property.ProjectDir = C:\Users\addie\OneDrive\Desktop\Sis_Inventario\InventorySystem\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rabri\source\repos\Sis_Inventario\InventorySystem
+build_property.MSBuildProjectDirectory = C:\Users\addie\OneDrive\Desktop\Sis_Inventario\InventorySystem
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Home/Index.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Home/Privacy.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Marca/Index.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Marca/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Negocio/Create.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Negocio/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmVnb2Npb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Producto/Create.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Producto/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Producto/Delete.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Producto/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Producto/Details.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Producto/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Producto/Edit.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Producto/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Producto/Index.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Producto/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Representante/Create.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Representante/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwcmVzZW50YW50ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Shared/Error.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Shared/_LayoutBar.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Shared/_LayoutBar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Shared/_LayoutBarAdmin.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Shared/_LayoutBarAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRCYXJBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Usuario/ChangePassword.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Usuario/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Usuario/Create.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Usuario/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Usuario/Login.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Usuario/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Usuario/Password.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Usuario/Password.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/_ViewImports.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/_ViewStart.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Shared/_Layout.cshtml]
+[C:/Users/addie/OneDrive/Desktop/Sis_Inventario/InventorySystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-55uinp09wz

@@ -43,10 +43,9 @@ namespace InventorySystem.Controllers
             ViewBag.Categorias = await _categoryService.GetAllViewModel();
             ViewBag.Marcas = await _marcaService.GetAllViewModel();
             ViewBag.Proveedor = await _proveedorService.GetAllViewModel();
-            ModelState.AddModelError("Producto", "El producto no se encontro.");
 
             return View("Index", productos);
-            }
+        }
         public async Task<IActionResult> Create()
         {
             ProductoSaveViewModel vm = new();
@@ -110,16 +109,11 @@ namespace InventorySystem.Controllers
             return RedirectToRoute(new { controller = "Producto", action = "Index" });
         }
 
+        [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
-            return View("Delete", await _productService.GetById(id));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> DeletePost(int id)
-        {
             await _productService.Delete(id);
-            return RedirectToRoute(new { controller = "Marca", action = "Index" });
+            return RedirectToRoute(new { controller = "Producto", action = "Index" });
         }
 
     }

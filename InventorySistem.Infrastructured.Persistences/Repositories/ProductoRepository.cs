@@ -23,16 +23,23 @@ namespace InventorySystem.Infrastructured.Persistences.Repositories
             try
             {
                 var listProductos = await this.GetAllWithIncludesAsync(new List<string> { "IdCategoriaNavigation", "IdMarcaNavigation", "IdProveedorNavigation", "Negocios" });
-
-                var filteredProductos = listProductos
-                          .Where(p => (string.IsNullOrEmpty(nombre) || p.Nombre.Contains(nombre))
-                                   && (idCategoria == null || p.IdCategoria == idCategoria)
-                                   && (idMarca == null || p.IdMarca == idMarca)
-                                   && (idProveedor == null || p.IdProveedor == idProveedor))
-                          .ToList();
-
-                return filteredProductos.Any() ? filteredProductos : null;
-
+                if (nombre != null)
+                {
+                    listProductos = listProductos.Where(p => p.Nombre.ToLower().Contains(nombre.ToLower())).ToList();
+                }
+                if (idCategoria != null)
+                {
+                    listProductos = listProductos.Where(p => p.IdCategoria == idCategoria).ToList();
+                }
+                if (idMarca != null)
+                {
+                    listProductos = listProductos.Where(p => p.IdMarca == idMarca).ToList();
+                }
+                if(idProveedor != null)
+                {
+                    listProductos = listProductos.Where(p => p.IdProveedor == idProveedor).ToList();
+                }
+                return listProductos;
             }
             catch (Exception ex)
             {

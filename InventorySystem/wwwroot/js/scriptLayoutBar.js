@@ -1,6 +1,8 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
 let searchBtn = document.querySelector(".bx-search");
+const modal = document.getElementsByClassName("show")
+modal.style.display = `opacity:0;`;
 closeBtn.addEventListener("click", () => {
   sidebar.classList.toggle("open");
   menuBtnChange();
