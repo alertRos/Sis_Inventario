@@ -98,6 +98,10 @@ namespace InventorySystem.Core.Application.Services
         public async Task<IEnumerable<ProductoViewModel>> GetBy(string? nombre,int? idMarca, int? idCategoria, int? idProveedor)
         {
             var productosGet = await _repository.GetBy(nombre,idMarca, idCategoria, idProveedor);
+            if(productosGet == null)
+            {
+                return null;
+            }
             var productos = productosGet.Select(p => new ProductoViewModel
             {
                 Nombre = p.Nombre,
