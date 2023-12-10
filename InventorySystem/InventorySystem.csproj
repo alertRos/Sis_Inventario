@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Shared\_LayoutBar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Shared\_LayoutBar.cshtml" />
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
     <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />

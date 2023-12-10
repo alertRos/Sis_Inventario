@@ -78,9 +78,9 @@ namespace InventorySystem.Controllers
             {
                 // Deserializar el JSON a un objeto NegocioSaveViewModel
                 var user = JsonConvert.DeserializeObject<UsuarioSaveViewModel>(usuarioJson);
+                
 
 
-                vm.usuario = user;
                 if (TempData["Negocio"] is string negocioJson)
                 {
                     // Deserializar el JSON a un objeto NegocioSaveViewModel
@@ -88,6 +88,8 @@ namespace InventorySystem.Controllers
                     vm.negocio = negocioVm;
                 }
                 var negocio = await _negocioService.Add(vm.negocio);
+                user.IdNegocio= negocio.Id;
+                vm.usuario = user;
                 var usuario = await _usuarioService.Add(vm.usuario);
                 vm.IdNegocio = negocio.Id;
                 vm.IdUsuario = usuario.Id;

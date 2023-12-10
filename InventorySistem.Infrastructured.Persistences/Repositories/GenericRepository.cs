@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,6 +56,21 @@ namespace InventorySystem.Infrastructured.Persistences.Repositories
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return entity;
+        }
+
+        public async Task<List<T>> ObtenerPaginadosAsync(int paginaActual, int tamanoPagina, Expression<Func<T, object>> orderBy)
+        {
+            int indiceInicio = (paginaActual - 1) * tamanoPagina;
+
+            return await _context.Set<T>()
+                .OrderBy(orderBy)
+                .Skip(indiceInicio)
+                .Take(tamanoPagina)
+                .ToListAsync();
+        }
+        public async Task<int> GetTotalItemsCountAsync()
+        {
+            return await _context.Set<T>().CountAsync();
         }
     }
 }

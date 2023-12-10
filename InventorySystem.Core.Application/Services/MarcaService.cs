@@ -6,6 +6,7 @@ using InventorySystem.Core.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -75,6 +76,21 @@ namespace InventorySystem.Core.Application.Services
             marcaSave.Id = marca.Id;
             marcaSave.Nombre = marca.Nombre;
             return marcaSave;
+        }
+        public async Task<List<MarcaViewModel>> GetPagination(int paginaActual, int tamanoPagina)
+        {
+            Expression<Func<Marcas, object>> orderBy = e => e.Id;
+            var marcas = await _repository.ObtenerPaginadosAsync(paginaActual, tamanoPagina, orderBy);
+            var total = await _repository.GetTotalItemsCountAsync();
+            var marcasVm = marcas.Select((c,index) => new MarcaViewModel
+            {
+                Id = c.Id,
+                Nombre = c.Nombre,
+                CountProductos = c.Productos.Count(),
+                TotalItems = total,
+            }).ToList();
+            return marcasVm;
+
         }
     }
 }

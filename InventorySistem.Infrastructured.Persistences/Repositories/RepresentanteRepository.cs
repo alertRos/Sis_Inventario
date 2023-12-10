@@ -22,5 +22,10 @@ namespace InventorySystem.Infrastructured.Persistences.Repositories
             var representante = await _context.Set<Representante>().FirstOrDefaultAsync(r => r.Cedula == cedula);
             return representante != null;
         }
+        public async Task<Representante> GetByUsuario(int id)
+        {
+            var representanteUsuario = await _context.Set<Representante>().FirstOrDefaultAsync(r => r.IdUsuario == id);
+            return representanteUsuario;
+        }
     }
 }

@@ -1,0 +1,137 @@
+﻿@model IEnumerable<InventorySystem.Core.Application.ViewModel.Producto.ProductoViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="Producto" asp-action="Create">Create New</a>
+    <div class="mb-3">
+
+        <form method="get" asp-controller="Productos" asp-action="GetBy">
+            <div class="mb-3">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" name="idCategoria" class="form-control" asp-items="ViewBag.IdCategoria as SelectList">
+                    <option value="">Seleccione una categoría</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="marca">Marca:</label>
+                <select id="marca" name="idMarca" class="form-control" asp-items="ViewBag.IdMarca as SelectList">
+<option value="">Seleccione una marca</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <input type="text" name="nombre" class="form-control form-control-lg"
+                       placeholder="Ingresar el nombre" />
+            </div>
+            <input type="submit" value="Buscar" class="btn btn-primary" />
+        </form>
+    </div> 
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCaducidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaUbicacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proveedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCaducidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreaUbicacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proveedor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productoModal">
+                        Ver Detalles del Producto
+                    </button>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="productoModalLabel">Detalles del Producto</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Contenido del modal, puedes personalizar según tus necesidades -->
+                            <dl class="row">
+                                <dt class="col-sm-3">Nombre:</dt>
+                                <dd class="col-sm-9">@item.Nombre</dd>
+
+                                <dt class="col-sm-3">Precio:</dt>
+                                <dd class="col-sm-9">@item.Precio</dd>
+
+                                <!-- Agrega más detalles según tus propiedades de modelo -->
+                            </dl>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+}
+    </tbody>
+</table>

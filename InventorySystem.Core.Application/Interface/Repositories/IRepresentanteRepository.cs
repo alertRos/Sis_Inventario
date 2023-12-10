@@ -10,5 +10,7 @@ namespace InventorySystem.Core.Application.Interface.Repositories
     public interface IRepresentanteRepository:IGenericRepository<Representante>
     {
         Task<bool> GetByCedula(string cedula);
+        Task<Representante> GetByUsuario(int id);
     }
+
 }

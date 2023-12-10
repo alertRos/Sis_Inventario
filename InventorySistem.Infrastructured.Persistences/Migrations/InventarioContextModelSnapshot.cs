@@ -154,7 +154,6 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                         .HasColumnName("idProveedor");
 
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .IsUnicode(false)
                         .HasColumnType("varchar(max)")
                         .HasColumnName("rutaImg");
