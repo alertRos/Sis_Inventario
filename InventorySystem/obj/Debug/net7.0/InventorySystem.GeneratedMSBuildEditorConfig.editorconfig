@@ -16,12 +16,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\rabri\source\repos\Sis_Inventario\InventorySystem
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Categoria/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Categoria/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Marca/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFyY2FcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Marca/Index.cshtml]
@@ -54,6 +66,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Producto/IndexAdmi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cSW5kZXhBZG1pLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Proveedor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Proveedor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/rabri/source/repos/Sis_Inventario/InventorySystem/Views/Representante/Create.cshtml]

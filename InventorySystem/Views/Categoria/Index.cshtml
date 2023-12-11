@@ -1,0 +1,66 @@
+﻿@using InventorySystem.Core.Application.ViewModel.Categoria;
+@model List<CategoriaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutBar.cshtml";
+
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Productos
+            </th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
+        <tbody>
+        <tr>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                @item.CountProductos
+            </td>
+            <td>
+                <a asp-action="Edit" asp-controller="Categoria" asp-route-id="@item.Id">Edit</a> 
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#categoriaModal-@item.Id">
+                        Eliminar
+                    </button>
+                </td>
+        </tr>
+        </tbody>
+        <div class="modal fade" id="categoriaModal-@item.Id" tabindex="-1" aria-labelledby="categoriaModalLabel-@item.Id" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="categoriaModalLabel-@item.Id">Eliminar la categoria @item.Nombre</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-header bg-danger text-light">
+                            <h4>Esta seguro que desea eliminar la categoria @item.Nombre?</h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <form asp-action="Delete" method="post" asp-route-id="@item.Id" asp-controller="Categoria">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+
+                        </form>
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+</table>

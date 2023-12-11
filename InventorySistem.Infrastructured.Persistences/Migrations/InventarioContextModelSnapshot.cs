@@ -325,24 +325,28 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                     b.HasOne("InventorySystem.Core.Domain.Entities.Categorias", "IdCategoriaNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdCategoria")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Categoria");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Marcas", "IdMarcaNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdMarca")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Marca");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Negocios", "Negocios")
                         .WithMany("Productos")
                         .HasForeignKey("IdNegocio")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Negocio");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Proveedores", "IdProveedorNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdProveedor")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Proveedor");
 
@@ -360,12 +364,14 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                     b.HasOne("InventorySystem.Core.Domain.Entities.Negocios", "Negocio")
                         .WithMany("Representantes")
                         .HasForeignKey("IdNegocio")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Representante_Negocio");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Usuario", "Usuario")
                         .WithMany("Representantes")
                         .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Representante_Usuario");
 

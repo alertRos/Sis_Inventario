@@ -1,0 +1,38 @@
+﻿@model InventorySystem.Core.Application.ViewModel.Categoria.CategoriaSaveViewModel
+
+@{
+    bool editMode = Model.Id == 0 ? false : true;
+    ViewData["Title"] = "Create";
+
+    Layout = "~/Views/Shared/_LayoutBar.cshtml";
+}
+<div class="row">
+    <div class="col-6 offset-3 p-3 mb-3">
+        <div class="shadow-lg   bg-body-tertiary rounded row d-flex justify-content-center align-items-center ">
+            <div class="card p-2">
+                <div class="card-header gradient text-light" style="background-color:#005954;">
+                    <h4>@(editMode ? $"Editando la categoria: {Model.Nombre}" : "Creando una nueva categoria")</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="Categoria" asp-action="@(editMode ? "Edit":"Create")">
+                        <div class="form-outline mb-4">
+                            <input asp-for="Nombre" class="form-control form-control-lg"
+                                   placeholder="Ingresar el nombre" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                       
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a asp-controller="Categoria" asp-action="Index" class="btn btn-danger">Volver atras</a>
+
+                    </form>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

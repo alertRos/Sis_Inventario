@@ -22,11 +22,17 @@ namespace InventorySystem.Core.Application.Services
             Proveedores proveedore = new();
             proveedore.Id = vm.Id;
             proveedore.Nombre = vm.Nombre;
+            proveedore.Email = vm.Email;
+            proveedore.Telefono = vm.Telefono;
+            proveedore.Direccion = vm.Direccion;
             proveedore = await _repository.AddAsync(proveedore);
 
             ProveedorSaveViewModel vmProveedor = new();
             vmProveedor.Id = proveedore.Id;
             vmProveedor.Nombre = proveedore.Nombre;
+            vmProveedor.Email = proveedore.Email;
+            vmProveedor.Telefono = proveedore.Telefono;
+            vmProveedor.Direccion = proveedore.Direccion;
             return vmProveedor;
 
         }
@@ -38,6 +44,10 @@ namespace InventorySystem.Core.Application.Services
             ProveedorSaveViewModel vmProveedor = new();
             vmProveedor.Id = proveedor.Id;
             vmProveedor.Nombre = proveedor.Nombre;
+            vmProveedor.Email = proveedor.Email;
+            vmProveedor.Telefono = proveedor.Telefono;
+            vmProveedor.Direccion = proveedor.Direccion;
+
             return vmProveedor;
         }
 
@@ -48,6 +58,9 @@ namespace InventorySystem.Core.Application.Services
             {
                 Id = c.Id,
                 Nombre = c.Nombre,
+                Email = c.Email,
+                Telefono = c.Telefono,
+                Direccion = c.Direccion,
                 CountProductos = c.Productos.Count()
             }).ToList();
             return proveedoresVm;
@@ -59,6 +72,10 @@ namespace InventorySystem.Core.Application.Services
             ProveedorSaveViewModel vmProveedor = new();
             vmProveedor.Id = proveedor.Id;
             vmProveedor.Nombre = proveedor.Nombre;
+            vmProveedor.Email = proveedor.Email;
+            vmProveedor.Telefono = proveedor.Telefono;
+            vmProveedor.Direccion = proveedor.Direccion;
+
             return vmProveedor;
         }
 
@@ -67,11 +84,18 @@ namespace InventorySystem.Core.Application.Services
             Proveedores proveedore = new();
             proveedore.Id = vm.Id;
             proveedore.Nombre = vm.Nombre;
+            proveedore.Email = vm.Email;
+            proveedore.Telefono = vm.Telefono;
+            proveedore.Direccion = vm.Direccion;
             proveedore = await _repository.UpdateAsync(proveedore);
 
             ProveedorSaveViewModel vmProveedor = new();
             vmProveedor.Id = proveedore.Id;
             vmProveedor.Nombre = proveedore.Nombre;
+            vmProveedor.Email = proveedore.Email;
+            vmProveedor.Telefono = proveedore.Telefono;
+            vmProveedor.Direccion = proveedore.Direccion;
+
             return vmProveedor;
         }
     }

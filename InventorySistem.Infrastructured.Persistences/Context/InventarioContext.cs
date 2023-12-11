@@ -123,23 +123,23 @@ public partial class InventarioContext : DbContext
 
             entity.HasOne(d => d.IdCategoriaNavigation).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.IdCategoria)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Productos_Categoria");
 
             entity.HasOne(d => d.IdMarcaNavigation).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.IdMarca)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Productos_Marca");
 
             entity.HasOne(d => d.IdProveedorNavigation).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.IdProveedor)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Productos_Proveedor");
 
 
             entity.HasOne(d => d.Negocios).WithMany(p => p.Productos)
                 .HasForeignKey(d => d.IdNegocio)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_Productos_Negocio");
         });
 
@@ -212,12 +212,12 @@ public partial class InventarioContext : DbContext
             entity.HasOne(r => r.Negocio)
             .WithMany(n => n.Representantes)
             .HasForeignKey(r => r.IdNegocio)
-            .OnDelete(DeleteBehavior.ClientSetNull)
+            .OnDelete(DeleteBehavior.Cascade)
             .HasConstraintName("FK_Representante_Negocio");
             entity.HasOne(r => r.Usuario)
             .WithMany(u => u.Representantes)
             .HasForeignKey(r => r.IdUsuario)
-            .OnDelete(DeleteBehavior.ClientSetNull)
+            .OnDelete(DeleteBehavior.Cascade)
             .HasConstraintName("FK_Representante_Usuario");
 
         });

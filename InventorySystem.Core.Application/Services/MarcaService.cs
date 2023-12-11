@@ -25,32 +25,40 @@ namespace InventorySystem.Core.Application.Services
             Marcas marca = new();
             marca.Id = vm.Id;
             marca.Nombre = vm.Nombre;
+            marca.Telefono = vm.Telefono;
+            marca.Email = vm.Email;
             marca = await _repository.AddAsync(marca);
 
             MarcaSaveViewModel vmMarca = new();
             vmMarca.Id = marca.Id;
             vmMarca.Nombre = marca.Nombre;
+            vmMarca.Telefono = marca.Telefono;
+            vmMarca.Email = marca.Email;
             return vmMarca;
         }
 
         public async Task<MarcaSaveViewModel> Delete(int id)
         {
-            var categoria = await _repository.GetByIdAsync(id);
-            await _repository.DeleteAsync(categoria);
+            var marca = await _repository.GetByIdAsync(id);
+            await _repository.DeleteAsync(marca);
             MarcaSaveViewModel Marcasave = new();
-            Marcasave.Id = categoria.Id;
-            Marcasave.Nombre = categoria.Nombre;
+            Marcasave.Id = marca.Id;
+            Marcasave.Nombre = marca.Nombre;
+            Marcasave.Telefono = marca.Telefono;
+            Marcasave.Email = marca.Email;
             return Marcasave;
 
         }
 
         public async Task<List<MarcaViewModel>> GetAllViewModel()
         {
-            var marcas = await _repository.GetAllAsync();
+            var marcas = await _repository.GetAllWithIncludesAsync(new List<string> { "Productos" });
             var marcasVm = marcas.Select(c => new MarcaViewModel
             {
                 Id = c.Id,
                 Nombre = c.Nombre,
+                Email = c.Email,
+                Telefono = c.Telefono,
                 CountProductos = c.Productos.Count()
             }).ToList();
             return marcasVm;
@@ -62,6 +70,8 @@ namespace InventorySystem.Core.Application.Services
             MarcaSaveViewModel marcasave = new();
             marcasave.Id = marcas.Id;
             marcasave.Nombre = marcas.Nombre;
+            marcasave.Telefono = marcas.Telefono;
+            marcasave.Email = marcas.Email;
             return marcasave;
         }
 
@@ -70,11 +80,15 @@ namespace InventorySystem.Core.Application.Services
             Marcas marca = new();
             marca.Id = vm.Id;
             marca.Nombre = vm.Nombre;
+            marca.Telefono = vm.Telefono;
+            marca.Email = vm.Email;
             marca = await _repository.UpdateAsync(marca);
 
             MarcaSaveViewModel marcaSave = new();
             marcaSave.Id = marca.Id;
             marcaSave.Nombre = marca.Nombre;
+            marcaSave.Telefono = marca.Telefono;
+            marcaSave.Email = marca.Email;
             return marcaSave;
         }
         public async Task<List<MarcaViewModel>> GetPagination(int paginaActual, int tamanoPagina)

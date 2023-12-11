@@ -45,7 +45,7 @@ namespace InventorySystem.Core.Application.Services
 
         public async Task<List<CategoriaViewModel>> GetAllViewModel()
         {
-            var categorias = await _repository.GetAllAsync();
+            var categorias = await _repository.GetAllWithIncludesAsync(new List<string> { "Productos"});
             var categoriasVm = categorias.Select(c => new CategoriaViewModel
             {
                 Id = c.Id,

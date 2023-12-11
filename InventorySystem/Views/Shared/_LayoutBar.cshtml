@@ -43,7 +43,27 @@
                     </a>
                     <span class="tooltip">Inventario</span>
                 </li>
-
+                <li>
+                    <a asp-area="" asp-controller="Marca" asp-action="Index">
+                        <i class='bx bx-log-in'></i>
+                        <span class="links_name">Marca</span>
+                    </a>
+                    <span class="tooltip">Marca</span>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Categoria" asp-action="Index">
+                        <i class='bx bx-log-in'></i>
+                        <span class="links_name">Categoria</span>
+                    </a>
+                    <span class="tooltip">Categoria</span>
+                </li>
+                <li>
+                    <a asp-area="" asp-controller="Proveedor" asp-action="Index">
+                        <i class='bx bx-log-in'></i>
+                        <span class="links_name">Proveedor</span>
+                    </a>
+                    <span class="tooltip">Proveedor</span>
+                </li>
                 <li class="profile">
                     <div class="profile-details">
                         <img src="#" alt="profileImg">
@@ -53,6 +73,7 @@
                     </div>
                     <a asp-area="" asp-controller="Usuario" asp-action="Logout"><i class='bx bx-log-out' id="log_out"></i></a>
                 </li>
+   
             }
             else
             {
@@ -63,6 +84,9 @@
                     </a>
                     <span class="tooltip">Login</span>
                 </li>
+          
+
+
                 <li>
                     <a asp-area="" asp-controller="Negocio" asp-action="Create">
                         <i class='bx bx-user-plus'></i>
