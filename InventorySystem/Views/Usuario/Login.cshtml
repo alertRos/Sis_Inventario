@@ -5,6 +5,7 @@
 
 
 <link rel="stylesheet" href="~/css/site.css" />
+<link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
 
 <div class="container" id="container">
     <!-- Login -->
@@ -13,13 +14,13 @@
             <h1>Bienvenido al sistema de inventario</h1>
             <span>Iniciar Sesion</span>
             <div class="input-with-icon">
-                <i class="fa-regular fa-user"></i>
+                <i class="bx bx-user"></i>
                 <input asp-for="Email" type="email" id="email" class="validationServer form-control" placeholder="Email" />
                 <div id="emailFeedback" class="invalid-feedback">
                 </div>
             </div>
             <div class="input-with-icon">
-                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
+                <i class="bx bx-lock"></i>
                 <input asp-for="Password" type="password" class="validationServer form-control" id="password" placeholder="Contraseña" />
                 <div id="passwordFeedback" class="invalid-feedback">
                 </div>

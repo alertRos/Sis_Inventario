@@ -1,343 +1,359 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\InventorySystem.bundle.scp.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\InventorySystem.bundle.scp.css",
       "PackagePath": "staticwebassets\\InventorySystem.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\3495e40b-e378-451e-a484-10e3835e4d0f.jpg",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\3495e40b-e378-451e-a484-10e3835e4d0f.jpg",
       "PackagePath": "staticwebassets\\Images\\Producto\\13\\3495e40b-e378-451e-a484-10e3835e4d0f.jpg"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\728f076c-f456-4da0-8353-03a18bb935d7.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\728f076c-f456-4da0-8353-03a18bb935d7.png",
       "PackagePath": "staticwebassets\\Images\\Producto\\13\\728f076c-f456-4da0-8353-03a18bb935d7.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\a4fc6ee1-dfb8-4b2e-abbb-b28d0de9d685.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\13\\a4fc6ee1-dfb8-4b2e-abbb-b28d0de9d685.png",
       "PackagePath": "staticwebassets\\Images\\Producto\\13\\a4fc6ee1-dfb8-4b2e-abbb-b28d0de9d685.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\14\\2e93df17-c752-43fa-b4bd-2d56f91bdf21.jpg",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\14\\2e93df17-c752-43fa-b4bd-2d56f91bdf21.jpg",
       "PackagePath": "staticwebassets\\Images\\Producto\\14\\2e93df17-c752-43fa-b4bd-2d56f91bdf21.jpg"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\15\\e328d4ce-398e-4a28-8d3d-9ac3bf541161.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\15\\e328d4ce-398e-4a28-8d3d-9ac3bf541161.png",
       "PackagePath": "staticwebassets\\Images\\Producto\\15\\e328d4ce-398e-4a28-8d3d-9ac3bf541161.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\16\\6cad0518-f0ed-47b6-8916-f86b9c6ebf0d.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\16\\6cad0518-f0ed-47b6-8916-f86b9c6ebf0d.png",
       "PackagePath": "staticwebassets\\Images\\Producto\\16\\6cad0518-f0ed-47b6-8916-f86b9c6ebf0d.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\1\\fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\1\\fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp",
       "PackagePath": "staticwebassets\\Images\\Producto\\1\\fd7faaa4-7ad9-409a-bf52-6bf8e9a3a38d.webp"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\2e2fbdf2-0076-4439-b5e7-26557a7c89a7.jpg",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\2\\40dbd9a1-a160-49df-b625-627d5107e8cc.jpg",
+      "PackagePath": "staticwebassets\\Images\\Producto\\2\\40dbd9a1-a160-49df-b625-627d5107e8cc.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\2e2fbdf2-0076-4439-b5e7-26557a7c89a7.jpg",
       "PackagePath": "staticwebassets\\Images\\Producto\\3\\2e2fbdf2-0076-4439-b5e7-26557a7c89a7.jpg"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\5e9a2075-0303-4f68-9e6c-508d494ad890.jpg",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\5e9a2075-0303-4f68-9e6c-508d494ad890.jpg",
       "PackagePath": "staticwebassets\\Images\\Producto\\3\\5e9a2075-0303-4f68-9e6c-508d494ad890.jpg"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\66c1d9ed-3643-416a-ad5c-5345203e31eb.jpg",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\66c1d9ed-3643-416a-ad5c-5345203e31eb.jpg",
       "PackagePath": "staticwebassets\\Images\\Producto\\3\\66c1d9ed-3643-416a-ad5c-5345203e31eb.jpg"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\e04c812a-6623-421b-9c37-da917d9107d0.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\dbffb86c-7d3c-4260-8650-5e1098748932.jpg",
+      "PackagePath": "staticwebassets\\Images\\Producto\\3\\dbffb86c-7d3c-4260-8650-5e1098748932.jpg"
+    },
+    {
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\3\\e04c812a-6623-421b-9c37-da917d9107d0.png",
       "PackagePath": "staticwebassets\\Images\\Producto\\3\\e04c812a-6623-421b-9c37-da917d9107d0.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\5\\a895530d-d15b-4bd4-8abe-5a10861fcefb.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\Images\\Producto\\5\\a895530d-d15b-4bd4-8abe-5a10861fcefb.png",
       "PackagePath": "staticwebassets\\Images\\Producto\\5\\a895530d-d15b-4bd4-8abe-5a10861fcefb.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\ChangePassword.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\ChangePassword.css",
       "PackagePath": "staticwebassets\\css\\ChangePassword.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\img.jpg",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\CreateDesign.css",
+      "PackagePath": "staticwebassets\\css\\CreateDesign.css"
+    },
+    {
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\CrudDesign.css",
+      "PackagePath": "staticwebassets\\css\\CrudDesign.css"
+    },
+    {
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\img.jpg",
       "PackagePath": "staticwebassets\\css\\img.jpg"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\layoutBarStyle.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\layoutBarStyle.css",
       "PackagePath": "staticwebassets\\css\\layoutBarStyle.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\productoStyle.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\productoStyle.css",
       "PackagePath": "staticwebassets\\css\\productoStyle.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\img\\Sign up-rafiki.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\img\\Sign up-rafiki.png",
       "PackagePath": "staticwebassets\\img\\Sign up-rafiki.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\img\\Spreadsheets-pana.png",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\img\\Spreadsheets-pana.png",
       "PackagePath": "staticwebassets\\img\\Spreadsheets-pana.png"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\Representante.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\Representante.js",
       "PackagePath": "staticwebassets\\js\\Representante.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\changePassword.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\changePassword.js",
       "PackagePath": "staticwebassets\\js\\changePassword.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\index.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\index.js",
       "PackagePath": "staticwebassets\\js\\index.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\login.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\login.js",
       "PackagePath": "staticwebassets\\js\\login.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\register.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\register.js",
       "PackagePath": "staticwebassets\\js\\register.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\scriptLayoutBar.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\scriptLayoutBar.js",
       "PackagePath": "staticwebassets\\js\\scriptLayoutBar.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\addie\\OneDrive\\Desktop\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

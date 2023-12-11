@@ -3,79 +3,100 @@
 
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_LayoutBar.cshtml";
+    Layout = "~/Views/Shared/_LayoutBarAdmin.cshtml";
 
 }
+<link rel="stylesheet" href="~/css/CrudDesign.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<style>
+    .sidebar i {
+        line-height: 60px;
+        position: relative;
+        right: 32px;
+    }
 
-<h1>Index</h1>
+    .sidebar li a:hover {
+        background: transparent;
+    }
+</style>
+<div class="main-container"> 
+    <p class="create">
+        <a asp-action="Create">
+            <span class="material-symbols-outlined">
+                add_circle
+            </span>  <span class="a-txt">Crear Marca</span>
+        </a>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Nombre
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Telefono
+                </th>
+                <th>
+                    Productos
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>
+                        @item.Nombre
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.Telefono
+                    </td>
+                    <td>
+                        @item.CountProductos
+                    </td>
+                    <td>
+                        <button><a asp-action="Edit" asp-controller="Marca" asp-route-id="@item.Id">Edit</a></button>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#marcaModal-@item.Id">
+                            Eliminar
+                        </button>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Email
-            </th>
-            <th>
-                Telefono
-            </th>
-            <th>
-                Productos
-            </th>
-        </tr>
-    </thead>
-@foreach (var item in Model) {
-        <tbody>
-        <tr>
-            <td>
-                @item.Nombre
-            </td>
-            <td>
-                @item.Email
-            </td>
-            <td>
-                @item.Telefono
-            </td>
-            <td>
-                @item.CountProductos
-            </td>
-            <td>
-                <a asp-action="Edit" asp-controller="Marca" asp-route-id="@item.Id">Edit</a>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#marcaModal-@item.Id">
-                        Eliminar
-                    </button>
-
-            </td>
-        </tr>
-    </tbody>
-        <div class="modal fade" id="marcaModal-@item.Id" tabindex="-1" aria-labelledby="marcaModalLabel-@item.Id" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="marcaModalLabel-@item.Id">Eliminar la marca @item.Nombre</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="card-header bg-danger text-light">
-                            <h4>Esta seguro que desea eliminar la marca @item.Nombre?</h4>
+                    </td>
+                </tr>
+            </tbody>
+            <div class="modal fade" id="marcaModal-@item.Id" tabindex="-1" aria-labelledby="marcaModalLabel-@item.Id" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="marcaModalLabel-@item.Id">Eliminar la marca @item.Nombre</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <form asp-action="Delete" method="post" asp-route-id="@item.Id" asp-controller="Marca">
-                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        <div class="modal-body">
+                            <div class="card-header bg-danger text-light">
+                                <h4>Esta seguro que desea eliminar la marca @item.Nombre?</h4>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <form asp-action="Delete" method="post" asp-route-id="@item.Id" asp-controller="Marca">
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
 
-                        </form>
-                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                            </form>
+                            <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
 
-}
-</table>
+        }
+    </table>
+
+</div>

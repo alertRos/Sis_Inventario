@@ -35,11 +35,20 @@ namespace InventorySystem.Controllers
             ViewBag.Proveedor = await _proveedorService.GetAllViewModel();
             return View(await _productService.GetAllViewModel());
         }
+        public async Task<IActionResult> IndexAdmi()
+        {
+            ViewBag.Categorias = await _categoryService.GetAllViewModel();
+            ViewBag.Marcas = await _marcaService.GetAllViewModel();
+            ViewBag.Proveedor = await _proveedorService.GetAllViewModel();
+            return View(await _productService.GetAllViewModel());
+        }
 
         public async Task<IActionResult> GetBy (string? nombre, int? idMarca, int? idProveedor, int? idCategoria, bool? fechaCaducidad )
         {
 
+
             var productos = await _productService.GetBy(nombre, idMarca, idCategoria, idProveedor, fechaCaducidad);
+
             ViewBag.Categorias = await _categoryService.GetAllViewModel();
             ViewBag.Marcas = await _marcaService.GetAllViewModel();
             ViewBag.Proveedor = await _proveedorService.GetAllViewModel();
@@ -90,7 +99,7 @@ namespace InventorySystem.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(ProductoSaveViewModel vm)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid )
             {
                 vm.proveedorSaveViews = await _proveedorService.GetAllViewModel();
                 vm.marcaViewModels = await _marcaService.GetAllViewModel();
