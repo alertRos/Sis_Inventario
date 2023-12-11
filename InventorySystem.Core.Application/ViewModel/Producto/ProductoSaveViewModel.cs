@@ -4,6 +4,7 @@ using InventorySystem.Core.Application.ViewModel.Proveedor;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,12 @@ namespace InventorySystem.Core.Application.ViewModel.Producto
 
         public string Descripcion { get; set; } = null!;
 
-        public int IdCategoria { get; set; }
+        [Required(ErrorMessage = "Seleccione una categoría.")]
+        public int IdCategoria { get; set; } 
 
+        [Required(ErrorMessage = "Seleccione una marca.")]
         public int IdMarca { get; set; }
+
 
         public DateTime? FechaCaducidad { get; set; }
 
@@ -30,6 +34,7 @@ namespace InventorySystem.Core.Application.ViewModel.Producto
 
         public int Stock { get; set; }
 
+        [Required(ErrorMessage = "Seleccione un proveedor.")]
         public int IdProveedor { get; set; }
         public int IdNegocio { get; set; }
         public List<CategoriaViewModel>? categoriaViewModels { get; set; }

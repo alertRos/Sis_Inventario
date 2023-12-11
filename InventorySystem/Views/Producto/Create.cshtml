@@ -19,7 +19,7 @@
                         }
                     </div>
 
-                        <form method="post" asp-controller="Producto" asp-action="@(editMode ? "Edit":"Create")" enctype="multipart/form-data">
+                        <form class="needs-validation" method="post" asp-controller="Producto" asp-action="@(editMode ? "Edit":"Create")" enctype="multipart/form-data">
                             
                            <input type="hidden" asp-for="ImgUrl" />
                             <div class="form-outline mb-4">
@@ -27,19 +27,26 @@
                                        placeholder="Ingresar el nombre" />
                                 <span asp-validation-for="Nombre" class="text-danger"></span>
                             </div>
+
+                        @if (!string.IsNullOrEmpty(ViewData.ModelState["Nombre"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                @Html.Raw(ViewData.ModelState["Nombre"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+
                             <div class="form-outline mb-4">
                                 @if (editMode)
                                 {
                                     <input asp-for="ImgFile" accept="image/jpg, image/jpeg, image/png, image/gif" multiple class="form-control form-control-lg"
                                            placeholder="Seleccione la imagen" />
-
                                 }
                                 else
                                 {
                                 <input asp-for="ImgFile" accept="image/jpg, image/jpeg, image/png, image/gif" multiple required class="form-control form-control-lg"
                                            placeholder="Seleccione la imagen" />
                                 <span asp-validation-for="ImgFile" class="text-danger"></span>
-
                                 }
 
                             </div>
@@ -48,11 +55,21 @@
                                    placeholder="Ingresar el caducidad" />
                             <span asp-validation-for="FechaCaducidad" class="text-danger"></span>
                         </div>
+
                             <div class="form-outline mb-4">
-                                <input type="number" asp-for="Precio" class="form-control form-control-lg"
+                                <input type="number" asp-for="Precio" min="1" class="form-control form-control-lg"
                                        placeholder="Ingresar el precio" />
                                 <span asp-validation-for="Precio" class="text-danger"></span>
                             </div>
+
+                        @if (!string.IsNullOrEmpty(ViewData.ModelState["AreaUbicacion"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                @Html.Raw(ViewData.ModelState["AreaUbicacion"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+
                         <div class="form-outline mb-4">
                             <input type="text" asp-for="AreaUbicacion" class="form-control form-control-lg"
                                    placeholder="Ingresar el area" />
@@ -60,16 +77,25 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="number" asp-for="Stock" class="form-control form-control-lg"
+                            <input type="number" min="1" asp-for="Stock" class="form-control form-control-lg"
                                    placeholder="Ingresar el Stock" />
                             <span asp-validation-for="Stock" class="text-danger"></span>
                         </div>
+
+                        @if (!string.IsNullOrEmpty(ViewData.ModelState["Descripcion"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                @Html.Raw(ViewData.ModelState["Descripcion"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
 
                             <div class="form-outline mb-4">
                                 <textarea asp-for="Descripcion" class="form-control form-control-lg"
                                           placeholder="Ingresas la descripcion"></textarea>
                                 <span asp-validation-for="Descripcion" class="text-danger"></span>
                             </div>
+
                             <div class="mb-3">
                                 <select asp-for="IdCategoria" asp-items="@(new SelectList(Model.categoriaViewModels,"Id","Nombre"))" class="form-control form-control-lg">
                                     <option value="0">-- Select a category --</option>

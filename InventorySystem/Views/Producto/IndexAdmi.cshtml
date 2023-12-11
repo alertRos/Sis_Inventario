@@ -144,7 +144,11 @@
                         </dl>
                     </div>
                     <div class="modal-footer">
-                        
+                        <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-primary">Editar</a>
+                        <form asp-action="Delete" method="post" asp-route-id="@item.Id" asp-controller="Producto">
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+       
+                        </form>
                         <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cerrar</button>
                     </div>
                 </div>
