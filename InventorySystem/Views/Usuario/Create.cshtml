@@ -20,7 +20,7 @@
             <span>Crea una cuenta</span>
             <div class="input-with-icon form-input">
                 <i class="fa-regular fa-user"></i>
-                <input asp-for="Nombre" type="text" placeholder="Nombre" class="validationServer form-control" id="nombre" aria-describedby="validationServer03Feedback" />
+                <input asp-for="Nombre" pattern="[a-zA-Z0-9]+" minlength="8" type="text" placeholder="Nombre" class="validationServer form-control" id="nombre" aria-describedby="validationServer03Feedback" />
                 <div id="nombreFeedback" class="invalid-feedback">
                 </div>
             </div>

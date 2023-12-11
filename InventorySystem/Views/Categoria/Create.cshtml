@@ -16,7 +16,7 @@
                     <form method="post" asp-controller="Categoria" asp-action="@(editMode ? "Edit":"Create")">
                         <div class="form-outline mb-4">
                             <input asp-for="Nombre" class="form-control form-control-lg"
-                                   placeholder="Ingresar el nombre" />
+                                   placeholder="Ingresar el nombre" maxlengt="70" required/>
                             <span asp-validation-for="Nombre" class="text-danger"></span>
                         </div>
                        

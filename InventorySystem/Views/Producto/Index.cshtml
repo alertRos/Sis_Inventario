@@ -109,7 +109,7 @@
         <div class="product-box">
             <div class="product-image"><img class="" src="@item.ImgUrl"></div>
             <div class="product-details">@item.Nombre</div>
-            <div class="product-price">$@item.Precio</div>
+            <div class="product-price">$@Math.Round(item.Precio,2)</div>
 
             <button type="button" class="button" data-bs-toggle="modal" data-bs-target="#productoModal-@item.Id">
                 Ver Detalles
@@ -132,7 +132,7 @@
                             <dd class="col-sm-9">@item.Nombre</dd>
 
                             <dt class="col-sm-3">Precio:</dt>
-                            <dd class="col-sm-9">$@item.Precio</dd>
+                            <dd class="col-sm-9">$@Math.Round(item.Precio,2)</dd>
 
                             <dt class="col-sm-3">Proveedor:</dt>
                             <dd class="col-sm-9">@item.Proveedor</dd>
@@ -144,7 +144,7 @@
                             <dd class="col-sm-9">@item.Marca</dd>
 
                             <dt class="col-sm-3">Caducidad:</dt>
-                            <dd class="col-sm-9">@item.FechaCaducidad</dd>
+                            <dd class="col-sm-9">@item.FechaCaducidad?.Date</dd>
                         </dl>
                     </div>
                     <div class="modal-footer">
