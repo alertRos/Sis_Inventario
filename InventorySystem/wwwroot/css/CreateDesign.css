@@ -1,4 +1,8 @@
-﻿input {
+﻿body{
+    overflow:hidden;
+}
+
+input {
     width: 19rem;
     margin-bottom: 1rem;
     border-radius: 1rem;

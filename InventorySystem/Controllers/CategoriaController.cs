@@ -20,6 +20,11 @@ namespace InventorySystem.Controllers
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
+            if (!_validateUserSession.hasAdmin())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+
+            }
             return View(await _categoryService.GetAllViewModel());
         }
 

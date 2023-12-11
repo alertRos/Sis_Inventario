@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InventorySystem.Infrastructured.Persistences.Migrations
 {
     [DbContext(typeof(InventarioContext))]
-    [Migration("20231206020904_Initial")]
+    [Migration("20231211174900_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -50,8 +50,11 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
             modelBuilder.Entity("InventorySystem.Core.Domain.Entities.Marcas", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .HasMaxLength(255)
@@ -72,7 +75,8 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                         .HasColumnType("varchar(15)")
                         .HasColumnName("telefono");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Marca");
 
                     b.ToTable("Marca", (string)null);
                 });
@@ -157,7 +161,6 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                         .HasColumnName("idProveedor");
 
                     b.Property<string>("ImgUrl")
-                        .IsRequired()
                         .IsUnicode(false)
                         .HasColumnType("varchar(max)")
                         .HasColumnName("rutaImg");
@@ -329,24 +332,28 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                     b.HasOne("InventorySystem.Core.Domain.Entities.Categorias", "IdCategoriaNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdCategoria")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Categoria");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Marcas", "IdMarcaNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdMarca")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Marca");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Negocios", "Negocios")
                         .WithMany("Productos")
                         .HasForeignKey("IdNegocio")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Negocio");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Proveedores", "IdProveedorNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdProveedor")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Productos_Proveedor");
 
@@ -364,12 +371,14 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                     b.HasOne("InventorySystem.Core.Domain.Entities.Negocios", "Negocio")
                         .WithMany("Representantes")
                         .HasForeignKey("IdNegocio")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Representante_Negocio");
 
                     b.HasOne("InventorySystem.Core.Domain.Entities.Usuario", "Usuario")
                         .WithMany("Representantes")
                         .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("FK_Representante_Usuario");
 

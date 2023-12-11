@@ -28,7 +28,8 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                 name: "Marca",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false),
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     email = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: true),
                     telefono = table.Column<string>(type: "varchar(15)", unicode: false, maxLength: 15, nullable: true),
                     nombre = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false)
@@ -96,7 +97,7 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                     descripcion = table.Column<string>(type: "text", nullable: false),
                     idCategoria = table.Column<int>(type: "int", nullable: false),
                     idMarca = table.Column<int>(type: "int", nullable: false),
-                    rutaImg = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
+                    rutaImg = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
                     fechaCaducidad = table.Column<DateTime>(type: "date", nullable: true),
                     areaUbicacion = table.Column<string>(type: "text", nullable: false),
                     stock = table.Column<int>(type: "int", nullable: false),
@@ -111,22 +112,26 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                         name: "FK_Productos_Categoria",
                         column: x => x.idCategoria,
                         principalTable: "Categoria",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Productos_Marca",
                         column: x => x.idMarca,
                         principalTable: "Marca",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Productos_Negocio",
                         column: x => x.IdNegocio,
                         principalTable: "Negocio",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Productos_Proveedor",
                         column: x => x.idProveedor,
                         principalTable: "Proveedor",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -149,12 +154,14 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                         name: "FK_Representante_Negocio",
                         column: x => x.idNegocio,
                         principalTable: "Negocio",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Representante_Usuario",
                         column: x => x.idUsuario,
                         principalTable: "Usuario",
-                        principalColumn: "id");
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
