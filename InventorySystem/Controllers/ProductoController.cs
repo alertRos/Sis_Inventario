@@ -36,10 +36,10 @@ namespace InventorySystem.Controllers
             return View(await _productService.GetAllViewModel());
         }
 
-        public async Task<IActionResult> GetBy (string? nombre, int? idMarca, int? idProveedor, int? idCategoria )
+        public async Task<IActionResult> GetBy (string? nombre, int? idMarca, int? idProveedor, int? idCategoria, bool? fechaCaducidad )
         {
 
-            var productos = await _productService.GetBy(nombre, idMarca, idProveedor, idCategoria);
+            var productos = await _productService.GetBy(nombre, idMarca, idCategoria, idProveedor, fechaCaducidad);
             ViewBag.Categorias = await _categoryService.GetAllViewModel();
             ViewBag.Marcas = await _marcaService.GetAllViewModel();
             ViewBag.Proveedor = await _proveedorService.GetAllViewModel();
