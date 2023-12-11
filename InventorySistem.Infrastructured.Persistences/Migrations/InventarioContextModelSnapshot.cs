@@ -47,8 +47,11 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
             modelBuilder.Entity("InventorySystem.Core.Domain.Entities.Marcas", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("id");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .HasMaxLength(255)
@@ -69,7 +72,8 @@ namespace InventorySystem.Infrastructured.Persistences.Migrations
                         .HasColumnType("varchar(15)")
                         .HasColumnName("telefono");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("PK_Marca");
 
                     b.ToTable("Marca", (string)null);
                 });

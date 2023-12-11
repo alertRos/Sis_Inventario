@@ -50,9 +50,9 @@ public partial class InventarioContext : DbContext
         {
             entity.ToTable("Marca");
 
-            entity.Property(e => e.Id)
-                .ValueGeneratedNever()
-                .HasColumnName("id");
+            entity.HasKey(e => e.Id).HasName("PK_Marca");
+            entity.Property(e => e.Id).HasColumnName("id");
+
             entity.Property(e => e.Email)
                 .HasMaxLength(255)
                 .IsUnicode(false)

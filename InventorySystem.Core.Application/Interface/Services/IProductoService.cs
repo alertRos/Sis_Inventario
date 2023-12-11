@@ -13,5 +13,7 @@ namespace InventorySystem.Core.Application.Interface.Services
     public interface IProductoService:IGenericService<ProductoSaveViewModel, ProductoViewModel>
     {
         Task<IEnumerable<ProductoViewModel>> GetBy(string? nombre, int? idMarca, int? idCategoria, int? idProveedor, bool? fechaCaducidad);
+        Task<ProductoViewModel> SumarStock();
+        Task<List<ProductoViewModel>> GetAllStockMayor();
     }
 }

@@ -4,6 +4,7 @@ using InventorySystem.Middlewares;
 using InventorySystem.Core.Application.Helper;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using InventorySystem.Core.Application.Services;
 
 namespace InventorySystem.Controllers
 {
@@ -18,6 +19,10 @@ namespace InventorySystem.Controllers
         }
         public async Task<IActionResult> Login()
         {
+            if (_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             return View();
         }
         [HttpPost]
@@ -35,6 +40,11 @@ namespace InventorySystem.Controllers
             if (uservm != null)
             {
                 HttpContext.Session.Set<UsuarioViewModel>("user", uservm);
+                if(uservm.RoleName == "Read")
+                {
+                    return RedirectToRoute(new { controller = "Home", action = "Dashboard" });
+
+                }
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
             else
@@ -45,18 +55,17 @@ namespace InventorySystem.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            if (!_validateUserSession.hasUser())
+            if (!_validateUserSession.hasUser() && !_validateUserSession.hasAdmin())
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-            var result = await _usuarioService.GetAllViewModel();
-            return View(result);
+            return View(await _usuarioService.GetAllViewModel());
         }
 
         //Es para que funcione en el Admin, cuando entre
         public IActionResult Register()
         {
-            if(!_validateUserSession.hasUser())
+            if (!_validateUserSession.hasUser() && !_validateUserSession.hasAdmin())
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
@@ -80,7 +89,7 @@ namespace InventorySystem.Controllers
                 return View(vm);
             }
             await _usuarioService.Add(vm);
-            return RedirectToRoute(new { controller = "Representante", action = "Create" });
+            return RedirectToRoute(new { controller = "Representante", action = "Register" });
         }
 
         [ServiceFilter(typeof(ValidarNegocioCreateFilterAttribute))]
@@ -176,6 +185,56 @@ namespace InventorySystem.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToRoute(new { controller = "Home", action = "Index" });
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (!_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
+            }
+            if (!_validateUserSession.hasAdmin())
+            {
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
+            }
+            await _usuarioService.Delete(id);
+            return RedirectToRoute(new { controller = "Usuario", action = "Index" });
+        }
+
+        public async Task<IActionResult> Edit (int id)
+        {
+            if (_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
+            }
+            if (_validateUserSession.hasAdmin())
+            {
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
+            }
+            var vm = await _usuarioService.GetById(id);
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(UsuarioSaveViewModel vm)
+        {
+            if (_validateUserSession.hasUser())
+            {
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
+            }
+            if (_validateUserSession.hasAdmin())
+            {
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
+            }
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("ConfirmPassword", "Las contraseñas no son iguales");
+
+                return View(vm);
+            }
+            vm.Password = PasswordEncryption.Encrypt(vm.Password);
+            await _usuarioService.Update(vm);
+            return RedirectToRoute(new { controller = "Usuario", action = "Login" });
         }
     }
 }

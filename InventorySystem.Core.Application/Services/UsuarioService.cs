@@ -34,7 +34,7 @@ namespace InventorySystem.Core.Application.Services
             var user = await _repository.ChangePassword(vm);
             if(user != null)
             {
-                string enlace = "https://localhost:44325/Usuario/Edit/" + user.Id;
+                string enlace = "http://localhost:5044/Usuario/Edit/" + user.Id;
                 EmailRequest emailRequest = new()
                 {
                     To = user.Email,
@@ -104,7 +104,7 @@ namespace InventorySystem.Core.Application.Services
         public async Task<List<UsuarioViewModel>> GetAllViewModel()
         {
             var userList = await _repository.GetAllWithIncludesAsync(new List<string> { "Representantes" });
-            return userList.Select(a => new UsuarioViewModel
+            return userList.Where(p=>p.RoleName!="Administrador").Select(a => new UsuarioViewModel
             {
                 Id = a.Id,
                 Nombre = a.Nombre,
@@ -122,9 +122,7 @@ namespace InventorySystem.Core.Application.Services
             usuarioSave.Id = user.Id;
             usuarioSave.Nombre = user.Nombre;
             usuarioSave.Email = user.Email;
-            usuarioSave.Password = user.Password;
             usuarioSave.RoleName = user.RoleName;
-            usuarioSave.IdNegocio = user.Representantes.FirstOrDefault().IdNegocio;
             return usuarioSave;
         }
 

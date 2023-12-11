@@ -5,7 +5,7 @@
 @using InventorySystem.Core.Application.ViewModel.Usuario;
 @inject IHttpContextAccessor HttpContextAccessor;
 @{
-    var user = HttpContextAccessor.HttpContext.Session.Get<UsuarioViewModel>("user");
+    var user = HttpContextAccessor.HttpContext.Session.Get<UsuarioViewModel>("user").RoleName;
 }
 @model IEnumerable<InventorySystem.Core.Application.ViewModel.Producto.ProductoViewModel>
 @{
@@ -57,7 +57,11 @@
     </div>
 }
 <div class="main-container">
+    @if(user == "Administrador")
+    {
+        <a asp-action="Create" asp-controller="Producto">Crear</a>
 
+    }
     <form method="get" asp-controller="Producto" asp-action="GetBy">
 
 
@@ -144,7 +148,15 @@
                         </dl>
                     </div>
                     <div class="modal-footer">
-                        
+                        @if(user == "Administrador")
+                        {
+                            <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-primary">Editar</a>
+                            <form asp-action="Delete" method="post" asp-route-id="@item.Id" asp-controller="Producto">
+                                <button type="submit" class="btn btn-danger">Eliminar</button>
+
+                            </form>
+                        }
+
                         <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cerrar</button>
                     </div>
                 </div>

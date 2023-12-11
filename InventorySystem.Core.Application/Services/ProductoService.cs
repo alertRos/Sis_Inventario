@@ -1,8 +1,11 @@
-﻿using InventorySystem.Core.Application.Interface.Repositories;
+﻿using InventorySystem.Core.Application.Helper;
+using InventorySystem.Core.Application.Interface.Repositories;
 using InventorySystem.Core.Application.Interface.Services;
 using InventorySystem.Core.Application.ViewModel.Producto;
 using InventorySystem.Core.Application.ViewModel.Proveedor;
+using InventorySystem.Core.Application.ViewModel.Usuario;
 using InventorySystem.Core.Domain.Entities;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +17,17 @@ namespace InventorySystem.Core.Application.Services
     public class ProductoService : IProductoService
     {
         private readonly IProductoRepository _repository;
-        public ProductoService(IProductoRepository repository)
+        private readonly UsuarioViewModel usuarioView;
+        private readonly IHttpContextAccessor _httpContext;
+        private readonly IProveedorRepository _proveedorRepository;
+        private readonly ICategoriaRepository _categoriaRepository;
+        public ProductoService(ICategoriaRepository categoria, IProductoRepository repository, IHttpContextAccessor httpContext, IProveedorRepository proveedor)
         {
             _repository = repository;
+            _categoriaRepository = categoria;
+            _proveedorRepository = proveedor;
+            _httpContext = httpContext;
+            usuarioView = _httpContext.HttpContext.Session.Get<UsuarioViewModel>("user");
         }
         public async Task<ProductoSaveViewModel> Add(ProductoSaveViewModel vm)
         {
@@ -71,8 +82,9 @@ namespace InventorySystem.Core.Application.Services
 
         public async Task<List<ProductoViewModel>> GetAllViewModel()
         {
+
             var productos = await _repository.GetAllWithIncludesAsync(new List<string> { "IdCategoriaNavigation", "IdMarcaNavigation", "IdProveedorNavigation", "Negocios" });
-            var productosVm = productos.Select(p => new ProductoViewModel
+            var productosVm = productos.Where(p => p.IdNegocio == usuarioView.IdNegocio).Select(p => new ProductoViewModel
             {
                 Id = p.Id,
                 Nombre = p.Nombre,
@@ -89,20 +101,20 @@ namespace InventorySystem.Core.Application.Services
                 IdCategoria = p.IdCategoria,
                 IdProveedor = p.IdProveedor,
                 IdNegocio = p.IdNegocio,
-                ImgUrl = p.ImgUrl
-                
+                ImgUrl = p.ImgUrl,
+
             }).ToList();
             return productosVm;
         }
 
-        public async Task<IEnumerable<ProductoViewModel>> GetBy(string? nombre,int? idMarca, int? idCategoria, int? idProveedor, bool? fechaCaducidad)
+        public async Task<IEnumerable<ProductoViewModel>> GetBy(string? nombre, int? idMarca, int? idCategoria, int? idProveedor, bool? fechaCaducidad)
         {
             var productosGet = await _repository.GetBy(nombre, idMarca, idCategoria, idProveedor, fechaCaducidad);
-            if(productosGet == null)
+            if (productosGet == null)
             {
                 return null;
             }
-            var productos = productosGet.Select(p => new ProductoViewModel
+            var productos = productosGet.Where(p => p.IdNegocio == usuarioView.IdNegocio).Select(p => new ProductoViewModel
             {
                 Nombre = p.Nombre,
                 Precio = p.Precio,
@@ -175,6 +187,46 @@ namespace InventorySystem.Core.Application.Services
 
 
 
+        }
+
+        public async Task<ProductoViewModel> SumarStock()
+        {
+            var productos = await _repository.GetAllWithIncludesAsync(new List<string> { "IdCategoriaNavigation", "IdMarcaNavigation", "IdProveedorNavigation", "Negocios" });
+            var productosVm = productos.Where(p => p.IdNegocio == usuarioView.IdNegocio);
+            var categoriaSum = _categoriaRepository.GetAllAsync().Result.Count();
+            var proveedorSum = _proveedorRepository.GetAllAsync().Result.Count();
+            var sumaProducto = productosVm.Sum(p => p.Stock);
+
+            ProductoViewModel productoViewModel = new();
+            productoViewModel.CountProducto = sumaProducto;
+            productoViewModel.CountProveedor = categoriaSum;
+            productoViewModel.CountCategoria = proveedorSum;
+            productoViewModel.productos = GetAllStockMayor().Result;
+            return productoViewModel;
+        }
+
+        public async Task<List<ProductoViewModel>> GetAllStockMayor (){
+            var productos = await _repository.GetAllWithIncludesAsync(new List<string> { "IdCategoriaNavigation", "IdMarcaNavigation", "IdProveedorNavigation", "Negocios" });
+            var productoMasAltoStock = productos.Where(p => p.IdNegocio == usuarioView.IdNegocio).OrderByDescending(p => p.Stock).Select(p => new ProductoViewModel{
+                Id = p.Id,
+                Nombre = p.Nombre,
+                Precio = p.Precio,
+                Descripcion = p.Descripcion,
+                Categoria = p.IdCategoriaNavigation.Nombre,
+                Marca = p.IdMarcaNavigation.Nombre,
+                FechaCaducidad = p.FechaCaducidad,
+                AreaUbicacion = p.AreaUbicacion,
+                Stock = p.Stock,
+                Proveedor = p.IdProveedorNavigation.Nombre,
+                Negocio = p.Negocios.Nombre,
+                IdMarca = p.IdMarca,
+                IdCategoria = p.IdCategoria,
+                IdProveedor = p.IdProveedor,
+                IdNegocio = p.IdNegocio,
+                ImgUrl = p.ImgUrl,
+            }).ToList();
+
+            return productoMasAltoStock;
         }
     }
 }

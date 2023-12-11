@@ -1,0 +1,94 @@
+﻿@using InventorySystem.Core.Application.ViewModel.Usuario;
+@model List<UsuarioViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutBar.cshtml";
+
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="~/css/CrudDesign.css" />
+<style>
+    .sidebar i {
+        line-height: 60px;
+        position: relative;
+        right: 32px;
+    }
+
+    .sidebar li a:hover {
+        background: transparent;
+    }
+</style>
+<p>
+    <a asp-action="Register">
+        <span class="material-symbols-outlined">
+            add_circle
+        </span>  <span class="a-txt">Crear Usuario</span>
+    </a>
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Email
+            </th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+
+
+        <tbody>
+            <tr>
+                <td>
+                    @item.Nombre
+                </td>
+                <td>
+                    @item.RoleName
+                </td>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#proveedorModal-@item.Id">
+                        Eliminar
+                    </button>
+                </td>
+            </tr>
+
+        </tbody>
+
+        <div class="modal fade" id="proveedorModal-@item.Id" tabindex="-1" aria-labelledby="proveedorModalLabel-@item.Id" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="proveedorModalLabel-@item.Id">Eliminar el usuario @item.Nombre</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-header bg-danger text-light">
+                            <h4>Esta seguro que desea eliminar el usuario @item.Nombre?</h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <form asp-action="Delete" method="post" asp-route-id="@item.Id" asp-controller="Usuario">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+
+                        </form>
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

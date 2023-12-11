@@ -1,0 +1,91 @@
+﻿﻿﻿@using Microsoft.AspNetCore.Http;
+@using InventorySystem.Core.Application.Helper;
+@using InventorySystem.Core.Application.ViewModel.Usuario;
+@model UsuarioSaveViewModel;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var user = HttpContextAccessor.HttpContext.Session.Get<UsuarioSaveViewModel>("user");
+}
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<link rel="stylesheet" href="~/css/site.css" />
+
+<div class="container" id="container">
+    <div class="form-container sign-in-container needs-validation">
+
+        <form class="needs-validation" method="post" asp-controller="Usuario" asp-action="Create">
+            <span>Crea una cuenta</span>
+            <div class="input-with-icon form-input">
+                <i class="fa-regular fa-user"></i>
+                <input asp-for="Nombre" type="text" placeholder="Nombre" class="validationServer form-control" id="nombre" aria-describedby="validationServer03Feedback" />
+                <div id="nombreFeedback" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="input-with-icon">
+                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
+                <input asp-for="Password" type="password" class="validationServer form-control" id="password" placeholder="Contraseña" />
+                <div id="passwordFeedback" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="input-with-icon">
+                <i><ion-icon name="lock-closed-outline"></ion-icon></i>
+                <input asp-for="ConfirmPassword" id="confirm" type="password" class="validationServer form-control" placeholder="Contraseña" />
+                <div id="confirmFeedback" class="invalid-feedback">
+                </div>
+            </div>
+            <div class="input-with-icon">
+                <i class="fa-regular fa-id-card"></i>
+                <input asp-for="Email" type="email" id="email" class="validationServer form-control" placeholder="Email" />
+                <div id="emailFeedback" class="invalid-feedback">
+                </div>
+            </div>
+            @if (user != null && user.RoleName == "Administrador")
+            {
+                <div class="input-with-icon form-input">
+                    <i class="fa-regular fa-user"></i>
+                    <input asp-for="RoleName" type="text" placeholder="RoleName" class="validationServer form-control" id="role" aria-describedby="validationServer03Feedback" />
+                    <div id="roleFeedback" class="invalid-feedback">
+                    </div>
+                </div>
+
+            }
+            else
+            {
+
+                <input type="hidden" asp-for="RoleName">
+            }
+            <button type="submit" id="submitButton">Registrarme</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-right">
+                <div class="image-container">
+
+                    <img src="~/img/Sign up-rafiki.png" alt="Imagen representativa del login">
+                    @if (!string.IsNullOrEmpty(ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @Html.Raw(ViewData.ModelState["Email"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(ViewData.ModelState["ConfirmPassword"]?.Errors.FirstOrDefault()?.ErrorMessage))
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @Html.Raw(ViewData.ModelState["ConfirmPassword"]?.Errors.FirstOrDefault()?.ErrorMessage)
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                </div>
+                <a asp-controller="Usuario" asp-action="Login" class="inc registe" id="signIn">Iniciar Sesión</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script type="module" src="~/js/register.js"></script>

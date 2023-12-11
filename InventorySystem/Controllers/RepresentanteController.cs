@@ -3,6 +3,7 @@ using InventorySystem.Core.Application.ViewModel.Categoria;
 using InventorySystem.Core.Application.ViewModel.Negocio;
 using InventorySystem.Core.Application.ViewModel.Representante;
 using InventorySystem.Core.Application.ViewModel.Usuario;
+using InventorySystem.Core.Application.Helper;
 using InventorySystem.Middlewares;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -15,11 +16,15 @@ namespace InventorySystem.Controllers
         private readonly IUsuarioService _usuarioService;
         private readonly INegocioService _negocioService;
         private readonly ValidateUserSession _validateUserSession;
-        public RepresentanteController(INegocioService negocio,IRepresentanteService representanteService, IUsuarioService usuarioService, ValidateUserSession validateUser)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly UsuarioViewModel _user;
+        public RepresentanteController(IHttpContextAccessor httpContext,INegocioService negocio,IRepresentanteService representanteService, IUsuarioService usuarioService, ValidateUserSession validateUser)
         {
             _representanteService = representanteService;
             _negocioService = negocio;
             _usuarioService = usuarioService;
+            _httpContextAccessor = httpContext;
+            _user = _httpContextAccessor.HttpContext.Session.Get<UsuarioViewModel>("user");
             _validateUserSession = validateUser;
         }
         public async Task<IActionResult> Index()
@@ -33,39 +38,38 @@ namespace InventorySystem.Controllers
 
         public async Task<IActionResult> Register()
         {
-            if (_validateUserSession.hasUser())
+            if (!_validateUserSession.hasUser() && !_validateUserSession.hasAdmin())
             {
-                return RedirectToRoute(new { controller = "Home", action = "Index" });
-            }
-            if(!_validateUserSession.hasAdmin())
-            {
-                return RedirectToRoute(new { controller = "Home", action = "Index" });
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
             }
             RepresentanteSaveViewModel vm = new();
             vm.usuarioViewModels = await _usuarioService.GetAllViewModel();
-            return View();
+            vm.IdNegocio = _user.IdNegocio;
+            return View("Create", vm);
         }
 
         [HttpPost]
         public async Task<IActionResult> Register(RepresentanteSaveViewModel vm)
         {
-            if (_validateUserSession.hasUser())
+            if (!_validateUserSession.hasUser())
             {
-                return RedirectToRoute(new { controller = "Home", action = "Index" });
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
             }
             if (!_validateUserSession.hasAdmin())
             {
-                return RedirectToRoute(new { controller = "Home", action = "Index" });
+                return RedirectToRoute(new { controller = "Usuario", action = "Login" });
             }
             if (!ModelState.IsValid)
             {
                 vm.usuarioViewModels = await _usuarioService.GetAllViewModel();
-                return View(vm);
+                return View("Create",vm);
             }
+
             await _representanteService.Add(vm);
-            return RedirectToRoute(new { controller = "Representante", action = "Index" });
+            return RedirectToRoute(new { controller = "Home", action = "Dashboard" });
         }
         
+   
 
         public async Task<IActionResult> Create()
         {

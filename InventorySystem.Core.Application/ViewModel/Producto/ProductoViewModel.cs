@@ -33,5 +33,9 @@ namespace InventorySystem.Core.Application.ViewModel.Producto
         public int IdNegocio { get; set; }
         public string ImgUrl { get; set; }
 
+        public int CountProducto { get; set; }
+        public int CountCategoria { get;set; }
+        public int CountProveedor { get; set; }
+        public List<ProductoViewModel> productos { get; set; } 
     }
 }
