@@ -2,10 +2,7 @@
 using InventorySystem.Core.Application.ViewModel.Usuario;
 using InventorySystem.Middlewares;
 using InventorySystem.Core.Application.Helper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using InventorySystem.Core.Domain.Entities;
-using InventorySystem.Core.Application.ViewModel.Negocio;
 using Newtonsoft.Json;
 
 namespace InventorySystem.Controllers

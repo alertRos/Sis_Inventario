@@ -18,7 +18,8 @@ namespace InventorySystem.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            ProveedorSaveViewModel vm = new();
+            return View(vm);
         }
 
         [HttpPost]
@@ -35,7 +36,7 @@ namespace InventorySystem.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var vm = await _proveedorService.GetById(id);
-            return View(vm);
+            return View("Create", vm);
         }
 
         [HttpPost]
@@ -43,19 +44,13 @@ namespace InventorySystem.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(vm);
+                return View("Create",vm);
             }
             await _proveedorService.Update(vm);
             return RedirectToRoute(new { controller = "Proveedor", action = "Index" });
         }
 
         public async Task<IActionResult> Delete(int id)
-        {
-            return View("Delete", await _proveedorService.GetById(id));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> DeletePost(int id)
         {
             await _proveedorService.Delete(id);
             return RedirectToRoute(new { controller = "Proveedor", action = "Index" });

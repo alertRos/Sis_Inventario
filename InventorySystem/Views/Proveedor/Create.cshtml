@@ -1,0 +1,53 @@
+﻿@model InventorySystem.Core.Application.ViewModel.Proveedor.ProveedorSaveViewModel
+
+@{
+    bool editMode = Model.Id == 0 ? false : true;
+    ViewData["Title"] = "Create";
+
+    Layout = "~/Views/Shared/_LayoutBar.cshtml";
+}
+<div class="row">
+    <div class="col-6 offset-3 p-3 mb-3">
+        <div class="shadow-lg   bg-body-tertiary rounded row d-flex justify-content-center align-items-center ">
+            <div class="card p-2">
+                <div class="card-header gradient text-light" style="background-color:#005954;">
+                    <h4>@(editMode ? $"Editando la proveedor: {Model.Nombre}" : "Creando una nueva proveedor")</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="Proveedor" asp-action="@(editMode ? "Edit":"Create")">
+                        <div class="form-outline mb-4">
+                            <input asp-for="Nombre" class="form-control form-control-lg"
+                                   placeholder="Ingresar el nombre" />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+                         <div class="form-outline mb-4">
+                            <input asp-for="Email" class="form-control form-control-lg"
+                                   placeholder="Ingresar el email" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input asp-for="Telefono" class="form-control form-control-lg"
+                                   placeholder="Ingresar el Telefono" />
+                            <span asp-validation-for="Telefono" class="text-danger"></span>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input asp-for="Direccion" class="form-control form-control-lg"
+                                   placeholder="Ingresar el direccion" />
+                            <span asp-validation-for="Direccion" class="text-danger"></span>
+                        </div>
+                       
+                        <input type="hidden" asp-for="Id" />
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a asp-controller="Proveedor" asp-action="Index" class="btn btn-danger">Volver atras</a>
+
+                    </form>
+
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

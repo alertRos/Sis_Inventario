@@ -2,47 +2,80 @@
 @model List<MarcaViewModel>
 
 @{
-    ViewData["Title"] = "Lista de Marcas";
-    int totalPaginas = (int)Math.Ceiling((double)Model.Count / ViewBag.TamanoPagina);
-    int paginaActual = ViewBag.PaginaActual;
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutBar.cshtml";
 
 }
 
-<div class="container mt-4">
-    <h2>Lista de Marcas</h2>
+<h1>Index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Productos</th>
-                <th>Total Items</th>
-            </tr>
-        </thead>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Telefono
+            </th>
+            <th>
+                Productos
+            </th>
+        </tr>
+    </thead>
+@foreach (var item in Model) {
         <tbody>
-            @foreach (var marca in Model)
-            {
-                <tr>
-                    <td>@marca.Id</td>
-                    <td>@marca.Nombre</td>
-                    <td>@marca.CountProductos</td>
-                    <td>@marca.TotalItems</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+        <tr>
+            <td>
+                @item.Nombre
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.Telefono
+            </td>
+            <td>
+                @item.CountProductos
+            </td>
+            <td>
+                <a asp-action="Edit" asp-controller="Marca" asp-route-id="@item.Id">Edit</a>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#marcaModal-@item.Id">
+                        Eliminar
+                    </button>
 
-    <div class="pagination justify-content-center">
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                @for (int i = 1; i <= totalPaginas; i++)
-                {
-                    <li class="page-item @(i == paginaActual ? "active" : "")">
-                        <a class="page-link" asp-page="./Index" asp-route-paginaActual="@i">@i</a>
-                    </li>
-                }
-            </ul>
-        </nav>
-    </div>
-</div>
+            </td>
+        </tr>
+    </tbody>
+        <div class="modal fade" id="marcaModal-@item.Id" tabindex="-1" aria-labelledby="marcaModalLabel-@item.Id" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="marcaModalLabel-@item.Id">Eliminar la marca @item.Nombre</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-header bg-danger text-light">
+                            <h4>Esta seguro que desea eliminar la marca @item.Nombre?</h4>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <form asp-action="Delete" method="post" asp-route-id="@item.Id" asp-controller="Marca">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+
+                        </form>
+                        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+}
+</table>

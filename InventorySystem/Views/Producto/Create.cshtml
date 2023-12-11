@@ -3,6 +3,7 @@
     bool editMode = Model.Id == 0 ? false : true;
     ViewData["Title"] = editMode ? "Edit Producto" : "Add Producto";
     int id = Model.Id;
+    Layout = "~/Views/Shared/_LayoutBar.cshtml";
 }
 
 <div class="row">

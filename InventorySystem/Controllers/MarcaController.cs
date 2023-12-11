@@ -14,17 +14,14 @@ namespace InventorySystem.Controllers
             _marcaService = marcaService;
             _validateUserSession = validateUserSession;
         }
-        public async Task<IActionResult> Index(int paginaActual, int tamanoPagina)
+        public async Task<IActionResult> Index()
         {
             if (!_validateUserSession.hasUser())
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-            var marcasVm = await _marcaService.GetPagination(paginaActual, tamanoPagina);
-            ViewBag.TamanoPagina = tamanoPagina; 
-            ViewBag.PaginaActual = paginaActual;
 
-            return View(marcasVm);
+            return View(await _marcaService.GetAllViewModel());
         }
 
         public IActionResult Create()
@@ -38,7 +35,8 @@ namespace InventorySystem.Controllers
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
 
             }
-            return View();
+            MarcaSaveViewModel vm = new();
+            return View(vm);
         }
 
         [HttpPost]
@@ -73,7 +71,7 @@ namespace InventorySystem.Controllers
 
             }
             var vm = await _marcaService.GetById(id);
-            return View(vm);
+            return View("Create",vm);
         }
 
         [HttpPost]
@@ -90,28 +88,13 @@ namespace InventorySystem.Controllers
             }
             if (!ModelState.IsValid)
             {
-                return View(vm);
+                return View("Create",vm);
             }
             await _marcaService.Update(vm);
             return RedirectToRoute(new { controller = "Marca", action = "Index" });
         }
 
         public async Task<IActionResult> Delete(int id)
-        {
-            if (!_validateUserSession.hasUser())
-            {
-                return RedirectToRoute(new { controller = "Home", action = "Index" });
-            }
-            if (!_validateUserSession.hasAdmin())
-            {
-                return RedirectToRoute(new { controller = "Home", action = "Index" });
-
-            }
-            return View("Delete",await _marcaService.GetById(id));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> DeletePost(int id)
         {
             if (!_validateUserSession.hasUser())
             {

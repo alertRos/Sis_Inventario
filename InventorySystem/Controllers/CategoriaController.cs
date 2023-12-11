@@ -34,7 +34,9 @@ namespace InventorySystem.Controllers
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
 
             }
-            return View();
+            CategoriaSaveViewModel vm = new();
+
+            return View(vm);
         }
 
         [HttpPost]
@@ -69,7 +71,7 @@ namespace InventorySystem.Controllers
 
             }
             var vm = await _categoryService.GetById(id);
-            return View(vm);
+            return View("Create",vm);
         }
 
         [HttpPost]
@@ -86,19 +88,13 @@ namespace InventorySystem.Controllers
             }
             if (!ModelState.IsValid)
             {
-                return View(vm);
+                return View("Create", vm);
             }
             await _categoryService.Update(vm);
             return RedirectToRoute(new { controller = "Categoria", action = "Index" });
         }
 
         public async Task<IActionResult> Delete(int id)
-        {
-            return View("Delete", await _categoryService.GetById(id));
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> DeletePost(int id)
         {
             if (!_validateUserSession.hasUser())
             {
