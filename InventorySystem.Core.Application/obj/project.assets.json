@@ -1072,7 +1072,7 @@
       "projectName": "InventorySystem.Core.Application",
       "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\InventorySystem.Core.Application.csproj",
       "packagesPath": "C:\\Users\\rabri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Application\\obj\\",
+      "outputPath": "C:\\Users\\rabri\\Source\\Repos\\Sis_Inventario\\InventorySystem.Core.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rabri\\AppData\\Roaming\\NuGet\\NuGet.Config",

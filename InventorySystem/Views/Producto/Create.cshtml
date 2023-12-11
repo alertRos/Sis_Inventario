@@ -3,8 +3,22 @@
     bool editMode = Model.Id == 0 ? false : true;
     ViewData["Title"] = editMode ? "Edit Producto" : "Add Producto";
     int id = Model.Id;
-    Layout = "~/Views/Shared/_LayoutBar.cshtml";
+    Layout = "~/Views/Shared/_LayoutBarAdmin.cshtml";
 }
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<style>
+    .sidebar i {
+        line-height: 60px;
+        position: relative;
+        right: 32px;
+    }
+
+    .sidebar li a:hover {
+        background: transparent;
+    }
+</style>
 
 <div class="row">
     <div class="col-6 offset-3 p-3 mb-3">
@@ -25,8 +39,8 @@
                            <input type="hidden" asp-for="ImgUrl" />
                             <div class="form-outline mb-4">
                                 <input asp-for="Nombre" class="form-control form-control-lg"
-                                       placeholder="Ingresar el nombre" />
-                                <span asp-validation-for="Nombre" class="text-danger"></span>
+                                    placeholder="Ingresar el nombre" maxlength="200" required/>
+                                <span id="errorMessage" asp-validation-for="Nombre" class="text-danger"></span>
                             </div>
 
                         @if (!string.IsNullOrEmpty(ViewData.ModelState["Nombre"]?.Errors.FirstOrDefault()?.ErrorMessage))
@@ -53,13 +67,13 @@
                             </div>
                         <div class="form-outline mb-4">
                             <input type="date" asp-for="FechaCaducidad" class="form-control form-control-lg"
-                                   placeholder="Ingresar el caducidad" />
-                            <span asp-validation-for="FechaCaducidad" class="text-danger"></span>
+                                   placeholder="Ingresar el caducidad"  required/>
+                            <span id="fechaCad" asp-validation-for="FechaCaducidad" class="text-danger"></span>
                         </div>
 
                             <div class="form-outline mb-4">
-                                <input type="number" asp-for="Precio" min="1" class="form-control form-control-lg"
-                                       placeholder="Ingresar el precio" />
+                            <input asp-for="Precio" minlength="1" pattern="^[0-9]+(\.[0-9]+)?$" class="form-control form-control-lg"
+                                       placeholder="Ingresar el precio" required/>
                                 <span asp-validation-for="Precio" class="text-danger"></span>
                             </div>
 
@@ -73,13 +87,13 @@
 
                         <div class="form-outline mb-4">
                             <input type="text" asp-for="AreaUbicacion" class="form-control form-control-lg"
-                                   placeholder="Ingresar el area" />
+                                   placeholder="Ingresar el area" required/>
                             <span asp-validation-for="AreaUbicacion" class="text-danger"></span>
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="number" min="1" asp-for="Stock" class="form-control form-control-lg"
-                                   placeholder="Ingresar el Stock" />
+                            <input asp-for="Stock" minlength="1" pattern="[0-9]+" class="form-control form-control-lg"
+                                   placeholder="Ingresar el Stock" required/>
                             <span asp-validation-for="Stock" class="text-danger"></span>
                         </div>
 
@@ -98,30 +112,30 @@
                             </div>
 
                             <div class="mb-3">
-                                <select asp-for="IdCategoria" asp-items="@(new SelectList(Model.categoriaViewModels,"Id","Nombre"))" class="form-control form-control-lg">
-                                    <option value="0">-- Select a category --</option>
+                                <select asp-for="IdCategoria" asp-items="@(new SelectList(Model.categoriaViewModels,"Id","Nombre"))" class="form-control form-control-lg" required>
+                                    <option value="">-- Select a categoria--</option>
                                 </select>
                             <span asp-validation-for="IdCategoria" class="text-danger"></span>
                             </div>
 
                         <div class="mb-3">
-                            <select asp-for=" IdMarca" asp-items="@(new SelectList(Model.marcaViewModels,"Id","Nombre"))" class="form-control form-control-lg">
-                                <option value="0">-- Select a marca --</option>
+                            <select asp-for=" IdMarca" asp-items="@(new SelectList(Model.marcaViewModels,"Id","Nombre"))" class="form-control form-control-lg" required>
+                                <option value="">-- Select a marca --</option>
                             </select>
                             <span asp-validation-for="IdMarca" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <select asp-for="IdProveedor" asp-items="@(new SelectList(Model.proveedorSaveViews,"Id","Nombre"))" class="form-control form-control-lg">
-                                <option value="0">-- Select a proveedor --</option>
+                            <select asp-for="IdProveedor" asp-items="@(new SelectList(Model.proveedorSaveViews,"Id","Nombre"))" class="form-control form-control-lg" required>
+                                <option value="">-- Select a proveedor --</option>
                             </select>
                             <span asp-validation-for="IdProveedor" class="text-danger"></span>
                         </div>
 
                             <input type="hidden" asp-for="Id" />
                             <input type="hidden" asp-for="IdNegocio"/>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                            <a asp-controller="Producto" asp-action="Index" class="btn btn-danger">Volver atras</a>
+                        <button type="submit" class="btn btn-primary" style="background-color: #E0ECED; color:black; border:none;">Guardar</button>
+                        <a asp-controller="Producto" asp-action="IndexAdmi" class="btn btn-danger" style="background-color: #E0ECED; color:black; border:none;">Volver atras</a>
 
                         </form>
                     
@@ -134,6 +148,9 @@
 
     </div>
 </div>
+<script>
+
+</script>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

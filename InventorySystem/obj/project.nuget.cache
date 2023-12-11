@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DV9c2hFs++DvNtftGPO0sq2MSLErFFpy/Wvec2lv8vLdilqc+FnS7Yp/75DTqnGriQZAFiYPifMs50XD0+cDWQ==",
+  "dgSpecHash": "NHwe3dxhWV7MSD8//NrqZ8iMQpXrJuFC5l7LkunmudUpCMGgdZWE1WN3vsUU0Ov80ncYP+ewslXXQjTqtG2vtw==",
   "success": true,
   "projectFilePath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\InventorySystem.csproj",
   "expectedPackageFiles": [
@@ -241,12 +241,5 @@
     "C:\\Users\\rabri\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\rabri\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

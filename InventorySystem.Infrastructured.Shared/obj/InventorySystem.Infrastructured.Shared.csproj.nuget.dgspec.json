@@ -96,7 +96,7 @@
         "projectName": "InventorySystem.Core.Domain",
         "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Domain\\InventorySystem.Core.Domain.csproj",
         "packagesPath": "C:\\Users\\rabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Core.Domain\\obj\\",
+        "outputPath": "C:\\Users\\rabri\\Source\\Repos\\Sis_Inventario\\InventorySystem.Core.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -151,7 +151,7 @@
         "projectName": "InventorySystem.Infrastructured.Shared",
         "projectPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\InventorySystem.Infrastructured.Shared.csproj",
         "packagesPath": "C:\\Users\\rabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rabri\\Source\\Repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\obj\\",
+        "outputPath": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem.Infrastructured.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rabri\\AppData\\Roaming\\NuGet\\NuGet.Config",

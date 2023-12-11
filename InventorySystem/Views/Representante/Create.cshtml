@@ -16,25 +16,25 @@
             <span>Crea una cuenta</span>
             <div class="input-with-icon form-input">
                 <i class="fa-regular fa-user"></i>
-                <input asp-for="Nombre" type="text" placeholder="Nombre" class="validationServer form-control" id="nombre" aria-describedby="validationServer03Feedback" />
+                <input asp-for="Nombre" type="text" placeholder="Nombre" pattern="[a-zA-Z]*" maxlength="70" class="validationServer form-control" id="nombre" aria-describedby="validationServer03Feedback" />
                 <div id="nombreFeedback" class="invalid-feedback">
                 </div>
             </div>
             <div class="input-with-icon">
                 <i class="fa-regular fa-user"></i>
-                <input asp-for="Apellido" type="text" class="validationServer form-control" id="apellido" placeholder="Apellido" />
+                <input asp-for="Apellido" type="text" pattern="[a-zA-Z]*" maxlength="70" class="validationServer form-control" id="apellido" placeholder="Apellido" />
                 <div id="apellidoFeedback" class="invalid-feedback">
                 </div>
             </div>
             <div class="input-with-icon">
                 <i class="fa-regular fa-user"></i>
-                <input asp-for="Cedula" id="cedula" type="text" class="validationServer form-control" placeholder="Cedula" />
+                <input type="number" min="11" max="11" asp-for="Cedula" id="cedula" type="text" class="validationServer form-control" placeholder="Cedula" />
                 <div id="cedulaFeedback" class="invalid-feedback">
                 </div>
             </div>
             <div class="input-with-icon">
                 <i class="fa-regular fa-id-card"></i>
-                <input asp-for="Telefono" type="text" id="telefono" class="validationServer form-control" placeholder="Telefono" />
+                <input type="number" min="7" max="15" asp-for="Telefono" type="text" id="telefono" class="validationServer form-control" placeholder="Telefono" />
                 <div id="telefonoFeedback" class="invalid-feedback">
                 </div>
             </div>
