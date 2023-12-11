@@ -95,9 +95,9 @@ namespace InventorySystem.Core.Application.Services
             return productosVm;
         }
 
-        public async Task<IEnumerable<ProductoViewModel>> GetBy(string? nombre,int? idMarca, int? idCategoria, int? idProveedor)
+        public async Task<IEnumerable<ProductoViewModel>> GetBy(string? nombre,int? idMarca, int? idCategoria, int? idProveedor, bool? fechaCaducidad)
         {
-            var productosGet = await _repository.GetBy(nombre,idMarca, idCategoria, idProveedor);
+            var productosGet = await _repository.GetBy(nombre, idMarca, idCategoria, idProveedor, fechaCaducidad);
             if(productosGet == null)
             {
                 return null;

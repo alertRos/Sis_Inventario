@@ -10,6 +10,6 @@ namespace InventorySystem.Core.Application.Interface.Repositories
 {
     public interface IProductoRepository:IGenericRepository<Producto>
     {
-        Task<IEnumerable<Producto>> GetBy(string? nombre, int? idMarca, int? idCategoria, int? idProveedor);
+        Task<IEnumerable<Producto>> GetBy(string? nombre, int? idMarca, int? idCategoria, int? idProveedor, bool? fechaCaducidad);
     }
 }
