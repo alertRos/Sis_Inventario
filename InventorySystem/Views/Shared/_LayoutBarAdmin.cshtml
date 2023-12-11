@@ -14,10 +14,9 @@
 
     <link href="~/css/layoutBarStyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+   
+
 
 
 </head>
@@ -33,43 +32,43 @@
             @if (user != null && user.RoleName == "Administrador")
             {
                 <li>
-                    <a href="#">
+                    <a asp-area="" asp-controller="Home" asp-action="Dashboard">
                         <i class='bx bx-grid-alt'></i>
                         <span class="links_name">Dashboard</span>
                     </a>
                     <span class="tooltip">Dashboard</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a asp-area="" asp-controller="Usuario" asp-action="Index">
                         <i class='bx bx-user'></i>
                         <span class="links_name">Administrar Usuarios</span>
                     </a>
                     <span class="tooltip">Administrar Usuarios</span>
                 </li>
                 <li>
-                    <a asp-area="" asp-controller="Producto" asp-action="Index">
+                    <a asp-area="" asp-controller="Producto" asp-action="IndexAdmi">
                         <i class='bx bx-package'></i>
                         <span class="links_name">Administrar Inventario</span>
                     </a>
                     <span class="tooltip">Administrar Inventario</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a asp-area="" asp-controller="Categoria" asp-action="Index">
                         <i class='bx bx-category-alt'></i>
                         <span class="links_name"> Administrar Categorias</span>
                     </a>
                     <span class="tooltip">Admininistrar Categorias</span>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="bx bxs-certification" asp-area="" asp-controller="Marca" asp-action="Index"></i>
+                    <a asp-area="" asp-controller="Marca" asp-action="Index">
+                        <i class="bx bx-certification" ></i>
                         <span class="links_name">Administrar Marcas</span>
                     </a>
                     <span class="tooltip">Administrar Marcas</span>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="bx bxs-box" asp-area="" asp-controller="Proveedores" asp-action="Index"></i>
+                    <a asp-area="" asp-controller="Proveedor" asp-action="Index">
+                        <i class="bx bx-box"></i>
                         <span class="links_name">Administrar Proveedores</span>
                     </a>
                     <span class="tooltip">Administrar Proveedores</span>

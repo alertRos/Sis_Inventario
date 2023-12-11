@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FxfGIkhockUMUz2fExE9b0ph3M5iz2YEP/b2MJ6u+kc=",
+  "Hash": "oPKzZTKW4jtoR56DaK+YuzZJGRVdXS1bgfl8MpFkN1A=",
   "Source": "InventorySystem",
   "BasePath": "_content/InventorySystem",
   "Mode": "Default",
@@ -66,6 +66,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\ChangePassword.css"
+    },
+    {
+      "Identity": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\CreateDesign.css",
+      "SourceId": "InventorySystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\",
+      "BasePath": "_content/InventorySystem",
+      "RelativePath": "css/CreateDesign.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\CreateDesign.css"
+    },
+    {
+      "Identity": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\CrudDesign.css",
+      "SourceId": "InventorySystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\",
+      "BasePath": "_content/InventorySystem",
+      "RelativePath": "css/CrudDesign.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\CrudDesign.css"
     },
     {
       "Identity": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\img.jpg",

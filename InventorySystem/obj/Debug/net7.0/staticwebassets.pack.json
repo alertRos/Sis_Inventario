@@ -65,6 +65,14 @@
       "PackagePath": "staticwebassets\\css\\ChangePassword.css"
     },
     {
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\CreateDesign.css",
+      "PackagePath": "staticwebassets\\css\\CreateDesign.css"
+    },
+    {
+      "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\CrudDesign.css",
+      "PackagePath": "staticwebassets\\css\\CrudDesign.css"
+    },
+    {
       "Id": "C:\\Users\\rabri\\source\\repos\\Sis_Inventario\\InventorySystem\\wwwroot\\css\\img.jpg",
       "PackagePath": "staticwebassets\\css\\img.jpg"
     },
